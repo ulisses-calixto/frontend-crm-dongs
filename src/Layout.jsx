@@ -200,10 +200,9 @@ export default function Layout({ children, currentPageName }) {
         <main className="flex-1 flex flex-col overflow-hidden md:ml-60">
 
           {/* HEADER MOBILE */}
-          <header className="bg-white/90 backdrop-blur-sm border-b border-slate-200 px-6 py-4 md:hidden fixed top-0 left-0 w-full z-50">
-
-            <div className="flex-1 overflow-auto p-4 sm:p-6 md:p-8 mt-20 md:mt-0">
-
+          <header className="bg-white/90 backdrop-blur-sm border-b border-slate-200 px-6 py-4 md:hidden
+          fixed top-0 left-0 right-0 z-50">
+            <div className="flex items-center gap-4">
               <SidebarTrigger className="p-2 rounded-lg hover:bg-slate-200 transition" />
 
               <div className="flex items-center gap-2">
@@ -214,7 +213,7 @@ export default function Layout({ children, currentPageName }) {
           </header>
 
           {/* CONTEÚDO */}
-          <div className="flex-1 overflow-auto p-4 sm:p-6 md:p-8">
+          <div className="flex-1 overflow-auto p-4 sm:p-6 md:p-8 pt-[80px] md:pt-0">
             {children}
           </div>
         </main>
