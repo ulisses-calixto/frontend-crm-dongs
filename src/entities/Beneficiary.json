@@ -1,0 +1,75 @@
+{
+    "name": "Beneficiary",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Nome completo do beneficiado"
+      },
+      "cpf": {
+        "type": "string",
+        "description": "CPF do beneficiado"
+      },
+      "birth_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Data de nascimento"
+      },
+      "address": {
+        "type": "string",
+        "description": "Endereço residencial"
+      },
+      "phone": {
+        "type": "string",
+        "description": "Telefone de contato"
+      },
+      "email": {
+        "type": "string",
+        "description": "Email do beneficiado"
+      },
+      "family_size": {
+        "type": "number",
+        "description": "Tamanho da família"
+      },
+      "monthly_income": {
+        "type": "number",
+        "description": "Renda familiar mensal"
+      },
+      "priority_level": {
+        "type": "string",
+        "enum": [
+          "high",
+          "medium",
+          "low"
+        ],
+        "default": "medium",
+        "description": "Nível de prioridade"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "inactive",
+          "completed"
+        ],
+        "default": "active",
+        "description": "Status do beneficiado"
+      },
+      "notes": {
+        "type": "string",
+        "description": "Observações sobre o beneficiado"
+      },
+      "registration_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Data de cadastro"
+      }
+    },
+    "required": [
+      "name",
+      "cpf",
+      "address",
+      "family_size",
+      "registration_date"
+    ]
+}

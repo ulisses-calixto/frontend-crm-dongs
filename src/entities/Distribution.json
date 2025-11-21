@@ -1,0 +1,33 @@
+{
+    "name": "Distribution",
+    "type": "object",
+    "properties": {
+      "donation_id": {
+        "type": "string",
+        "description": "ID da doação original"
+      },
+      "beneficiary_id": {
+        "type": "string",
+        "description": "ID do beneficiado que recebeu a doação"
+      },
+      "quantity": {
+        "type": "number",
+        "description": "Quantidade distribuída"
+      },
+      "distribution_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Data da distribuição"
+      },
+      "notes": {
+        "type": "string",
+        "description": "Observações sobre a distribuição"
+      }
+    },
+    "required": [
+      "donation_id",
+      "beneficiary_id",
+      "quantity",
+      "distribution_date"
+    ]
+}

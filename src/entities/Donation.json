@@ -1,0 +1,82 @@
+{
+    "name": "Donation",
+    "type": "object",
+    "properties": {
+      "donor_name": {
+        "type": "string",
+        "description": "Nome do doador"
+      },
+      "donor_email": {
+        "type": "string",
+        "description": "Email do doador"
+      },
+      "donor_phone": {
+        "type": "string",
+        "description": "Telefone do doador"
+      },
+      "donation_type": {
+        "type": "string",
+        "enum": [
+          "monetary",
+          "food",
+          "clothing",
+          "toys",
+          "books",
+          "electronics",
+          "medicine",
+          "other"
+        ],
+        "description": "Tipo de doação"
+      },
+      "value": {
+        "type": "number",
+        "description": "Valor da doação em reais (se monetária)"
+      },
+      "description": {
+        "type": "string",
+        "description": "Descrição detalhada da doação"
+      },
+      "quantity": {
+        "type": "number",
+        "description": "Quantidade total de itens doados"
+      },
+      "remaining_quantity": {
+        "type": "number",
+        "description": "Quantidade restante de itens para distribuição"
+      },
+      "unit": {
+        "type": "string",
+        "description": "Unidade de medida (kg, unidades, litros, etc.)"
+      },
+      "donation_date": {
+        "type": "string",
+        "format": "date",
+        "description": "Data da doação"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "received",
+          "partially_distributed",
+          "fully_distributed",
+          "pending"
+        ],
+        "default": "received",
+        "description": "Status da doação"
+      },
+      "notes": {
+        "type": "string",
+        "description": "Observações adicionais"
+      },
+      "receipt_number": {
+        "type": "string",
+        "description": "Número do recibo emitido"
+      }
+    },
+    "required": [
+      "donor_name",
+      "donation_type",
+      "description",
+      "donation_date"
+    ]
+}
