@@ -66,7 +66,7 @@ export default function FirstSetup() {
           </CardHeader>
 
           <CardContent className="space-y-6 pt-3">
-            {/* NOME + CNPJ */}
+            {/* Nome e CNPJ */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-2">
                 <Label className="font-semibold text-slate-700">
@@ -93,7 +93,7 @@ export default function FirstSetup() {
               </div>
             </div>
 
-            {/* DESCRIÇÃO */}
+            {/*Descrição*/}
             <div className="space-y-2">
               <Label className="font-semibold text-slate-700">
                 Descrição da Missão *
@@ -109,7 +109,7 @@ export default function FirstSetup() {
               />
             </div>
 
-            {/* ENDEREÇO */}
+            {/*Endereço*/}
             <div className="space-y-2">
               <Label className="font-semibold text-slate-700">
                 Endereço Completo
@@ -124,7 +124,7 @@ export default function FirstSetup() {
               />
             </div>
 
-            {/* TELEFONE + EMAIL */}
+            {/*Telefone e e-mail */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-2">
                 <Label className="font-semibold text-slate-700">Telefone</Label>
@@ -154,7 +154,7 @@ export default function FirstSetup() {
               </div>
             </div>
 
-            {/* WEBSITE */}
+            {/*Website*/}
             <div className="space-y-2">
               <Label className="font-semibold text-slate-700">Website</Label>
               <Input
@@ -167,7 +167,7 @@ export default function FirstSetup() {
               />
             </div>
 
-            {/* BOTÃO */}
+            {/*Botão*/}
             <div className="pt-4">
               <Button
                 onClick={handleComplete}

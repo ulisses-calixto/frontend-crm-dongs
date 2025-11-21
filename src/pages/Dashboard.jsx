@@ -26,9 +26,6 @@ export default function Dashboard() {
   const [stats, setStats] = useState({});
   const [loading, setLoading] = useState(true);
 
-  // ======================
-  // 🔄 LOAD DATA
-  // ======================
   useEffect(() => {
     loadData();
   }, []);
@@ -80,10 +77,6 @@ export default function Dashboard() {
       setLoading(false);
     }
   };
-
-  // ========================
-  // 📊 Cálculos
-  // ========================
 
   const monthlyData = useMemo(() => {
     const currentYear = new Date().getFullYear();
@@ -140,9 +133,7 @@ export default function Dashboard() {
     [beneficiaries]
   );
 
-  // ========================
-  // ⏳ Tela de carregamento
-  // ========================
+  //Carregamento
   if (loading) {
     return (
       <div className="p-6 md:p-8">
@@ -160,15 +151,12 @@ export default function Dashboard() {
     );
   }
 
-  // ========================
-  // 🧱 LAYOUT FINAL
-  // ========================
   return (
     <div className="p-4 sm:p-6 md:p-8">
 
       <div className="max-w-7xl mx-auto space-y-10">
 
-        {/* HEADER */}
+        {/*Cabeçalho*/}
         <header className="text-center md:text-left">
           <h1 className="text-3xl font-bold text-foreground">Painel de Controle</h1>
           <p className="text-muted-foreground mt-1">
@@ -176,8 +164,9 @@ export default function Dashboard() {
             <strong>{organization?.name || "sua organização"}</strong>.
           </p>
         </header>
-
-        {/* CARDS */}
+        
+        {/*Componentes*/}
+        {/*Cards*/}
         <section className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
           <StatsCard
             title="Total de Doações"
@@ -217,7 +206,7 @@ export default function Dashboard() {
           />
         </section>
 
-        {/* GRÁFICOS */}
+        {/*Gráfico mesnal*/}
         <section className="grid gap-6 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <MonthlyChart data={monthlyData} />
@@ -225,10 +214,10 @@ export default function Dashboard() {
           <DonationTypePieChart donations={donations} />
         </section>
 
-        {/* IMPACTO SOCIAL */}
+        {/*Métricas de impacto*/}
         <ImpactMetrics donations={donations} beneficiaries={beneficiaries} />
 
-        {/* ATIVIDADE RECENTE */}
+        {/*Atividades recentes*/}
         <RecentActivity
           donations={donations.slice(0, 5)}
           beneficiaries={beneficiaries.slice(0, 3)}

@@ -35,9 +35,7 @@ export default function Donations() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filters, setFilters] = useState({ type: "all", status: "all" });
 
-  // ---------------------------------------------
-  // LOAD INITIAL DATA
-  // ---------------------------------------------
+  // Carregamento inicial
   useEffect(() => {
     loadInitialData();
   }, []);
@@ -73,9 +71,7 @@ export default function Donations() {
     }
   };
 
-  // ---------------------------------------------
-  // FORM SUBMIT
-  // ---------------------------------------------
+  //Formulario
   const handleFormSubmit = async (donationData) => {
     try {
       const payload = {
@@ -104,9 +100,7 @@ export default function Donations() {
     }
   };
 
-  // ---------------------------------------------
-  // DELETE
-  // ---------------------------------------------
+  //Confirmação do deletar
   const confirmDelete = async () => {
     if (!donationToDelete) return;
 
@@ -120,9 +114,7 @@ export default function Donations() {
     }
   };
 
-  // ---------------------------------------------
-  // DISTRIBUTION
-  // ---------------------------------------------
+  //Distribuição
   const handleDistributionSubmit = async (distributionData) => {
     try {
       const { donation_id, quantity } = distributionData;
@@ -156,9 +148,7 @@ export default function Donations() {
     }
   };
 
-  // ---------------------------------------------
-  // FILTERED LIST
-  // ---------------------------------------------
+  //Lista filtrada
   const filteredDonations = donations.filter((d) => {
     const s = searchTerm.toLowerCase();
     const matchesSearch =
@@ -174,14 +164,11 @@ export default function Donations() {
     return matchesSearch && matchesType && matchesStatus;
   });
 
-  // ---------------------------------------------
-  // RENDER
-  // ---------------------------------------------
   return (
     <div className="sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
 
-        {/* HEADER */}
+        {/*cabeçalho principal*/}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
           <div>
             <h1 className="text-3xl font-bold text-foreground">
@@ -203,7 +190,7 @@ export default function Donations() {
           </Button>
         </div>
 
-        {/* FILTERS */}
+        {/*Cabeçalho filtro*/}
         <div className="bg-card rounded-2xl border p-6 mb-8">
           <DonationFilters
             filters={filters}
@@ -213,7 +200,7 @@ export default function Donations() {
           />
         </div>
 
-        {/* FORM */}
+        {/*Chamada formulario doação*/}
         {showForm && (
           <DonationForm
             key={editingDonation ? editingDonation.id : "new"}
@@ -226,7 +213,7 @@ export default function Donations() {
           />
         )}
 
-        {/* DISTRIBUTION */}
+        {/*Chamada formulario distribuição*/}
         {showDistributionForm && (
           <DistributionForm
             donation={donationToDistribute}
@@ -236,7 +223,7 @@ export default function Donations() {
           />
         )}
 
-        {/* DELETE */}
+        {/*confirmação delete */}
         <DeleteConfirmationDialog
           isOpen={!!donationToDelete}
           onClose={() => setDonationToDelete(null)}
@@ -245,7 +232,7 @@ export default function Donations() {
           description="Esta ação é irreversível."
         />
 
-        {/* LIST */}
+        {/* listagem dos doadores*/}
         <DonationList
           donations={filteredDonations}
           loading={loading}

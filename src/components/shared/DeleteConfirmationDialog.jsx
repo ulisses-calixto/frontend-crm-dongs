@@ -10,7 +10,6 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { Trash2 } from "lucide-react";
 
 export default function DeleteConfirmationDialog({
   isOpen,
@@ -23,28 +22,42 @@ export default function DeleteConfirmationDialog({
     <AlertDialog open={isOpen} onOpenChange={onClose}>
       <AlertDialogContent
         className="
-          animate-fade-in
-          alert-dialog-content-animate 
-          rounded-2xl 
+          w-[90vw]
+          max-w-[400px]
+          sm:max-w-[460px]
+          p-4
+          md:p-6
+          rounded-2xl
           bg-card
+          max-h-[85vh]
+          animate-fade-in
         "
       >
-
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-2xl font-bold text-red-800">
+          <AlertDialogTitle
+            className="text-xl sm:text-2xl font-bold text-red-800"
+          >
             {title}
           </AlertDialogTitle>
 
-          <AlertDialogDescription className="text-md text-gray-600">
+          <AlertDialogDescription
+            className="text-sm sm:text-md text-gray-600 mt-2 leading-relaxed"
+          >
             {description}
           </AlertDialogDescription>
         </AlertDialogHeader>
 
-        <AlertDialogFooter className="mt-4">
+        <AlertDialogFooter className="mt-4 flex flex-col sm:flex-row gap-3">
           <AlertDialogCancel asChild>
             <Button
               variant="outline"
-              className="hover:bg-gray-100 transition-all rounded-xl px-5"
+              className="
+                hover:bg-gray-100 
+                transition-all 
+                rounded-xl 
+                px-5
+                w-full sm:w-auto
+              "
               onClick={onClose}
             >
               Cancelar
@@ -52,14 +65,18 @@ export default function DeleteConfirmationDialog({
           </AlertDialogCancel>
 
           <AlertDialogAction asChild>
-            
             <Button
-              variant="destructive"x
-              className="rounded-xl px-5 bg-red-600 hover:bg-red-900 transition-all"
+              className="
+                rounded-xl 
+                px-5 
+                bg-red-700 
+                hover:bg-red-950 
+                text-white
+                w-full sm:w-auto
+              "
               onClick={onConfirm}
             >
               Confirmar
-              <Trash2 className="w-4 h-4" />
             </Button>
           </AlertDialogAction>
         </AlertDialogFooter>

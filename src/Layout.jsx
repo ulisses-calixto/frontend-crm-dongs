@@ -212,7 +212,7 @@ export default function Layout({ children, currentPageName }) {
             </div>
           </header>
 
-          {/* CONTEÚDO */}
+          /* Conteúdo */ */
           <div className="flex-1 overflow-auto p-4 sm:p-6 md:p-8 pt-[80px] md:pt-0">
             {children}
           </div>
