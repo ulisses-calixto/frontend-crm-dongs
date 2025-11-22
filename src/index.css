@@ -1,7 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @plugin "tailwindcss-animate";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -60,50 +60,50 @@ body {
 :root {
   --radius: 0.4rem;
 
-  /* ====== Base ====== */
+  /*Base*/
   --background: oklch(0.98 0.01 255); 
   --foreground: oklch(0.22 0.03 255);
 
-  /* ====== Containers ====== */
+  /*Containers*/
   --card: oklch(0.99 0.005 255);
   --card-foreground: oklch(0.22 0.03 255);
 
   --popover: oklch(1 0 255);
   --popover-foreground: oklch(0.22 0.03 255);
 
-  /* ====== Ações Principais ====== */
-  --primary: oklch(0.50 0.13 260); /* azul arroxeado moderno */
+  /*Ações Principais*/
+  --primary: oklch(0.50 0.13 260);
   --primary-foreground: oklch(0.98 0.01 255);
 
-  /* ====== Secundário ====== */
+  /*Secundário*/
   --secondary: oklch(0.93 0.02 255);
   --secondary-foreground: oklch(0.28 0.03 255);
 
-  /* ====== Neutros / Muted ====== */
+  /*Neutros/Muted*/
   --muted: oklch(0.94 0.01 255);
   --muted-foreground: oklch(0.46 0.02 255);
 
-  /* ====== Accent ====== */
+  /*Accents*/
   --accent: oklch(0.96 0.015 255);
   --accent-foreground: oklch(0.28 0.03 255);
 
-  /* ====== Estados ====== */
+  /*Estados*/
   --destructive: oklch(0.62 0.19 25);
   --destructive-foreground: oklch(0.98 0.01 255);
 
-  /* ====== Bordas / Inputs ====== */
+  /*Bordas/Inputs*/
   --border: oklch(0.88 0.015 255);
   --input: oklch(0.88 0.015 255);
   --ring: oklch(0.55 0.06 260);
 
-  /* ====== Gráficos ====== */
+  /*Gráficos*/
   --chart-1: oklch(0.55 0.13 260);
   --chart-2: oklch(0.62 0.10 220);
   --chart-3: oklch(0.65 0.11 250);
   --chart-4: oklch(0.68 0.10 240);
   --chart-5: oklch(0.60 0.10 210);
 
-  /* ====== Sidebar ====== */
+  /*Cores do Sidebar*/
   --sidebar: oklch(0.985 0.005 255);
   --sidebar-foreground: oklch(0.22 0.03 255);
   --sidebar-primary: oklch(0.50 0.13 260);
@@ -117,22 +117,22 @@ body {
 
 
 .dark {
-  /* ====== Base ====== */
-  --background: oklch(0.22 0.05 250); /* ≈ blue-950 */
+  /*Base*/
+  --background: oklch(0.22 0.05 250);
   --foreground: oklch(0.96 0.01 250);
 
-  /* ====== Containers ====== */
+  /*Containers*/
   --card: oklch(0.26 0.06 250);
   --card-foreground: oklch(0.96 0.01 250);
 
   --popover: oklch(0.26 0.06 250);
   --popover-foreground: oklch(0.96 0.01 250);
 
-  /* ====== Ações Principais ====== */
-  --primary: oklch(0.50 0.10 250); /* azul-700/800 */
+  /*Principais Ações*/
+  --primary: oklch(0.50 0.10 250);
   --primary-foreground: oklch(0.98 0.01 250);
 
-  /* ====== Secundário e Destaques ====== */
+  /*Secundário/Destaques*/
   --secondary: oklch(0.33 0.05 250);
   --secondary-foreground: oklch(0.96 0.01 250);
 
@@ -142,7 +142,7 @@ body {
   --accent: oklch(0.35 0.05 250);
   --accent-foreground: oklch(0.96 0.01 250);
 
-  /* ====== Estados e Bordas ====== */
+  /*Estados/bordas*/
   --destructive: oklch(0.55 0.20 25);
   --destructive-foreground: oklch(0.98 0.01 250);
 
@@ -150,14 +150,14 @@ body {
   --input: oklch(0.33 0.05 250);
   --ring: oklch(0.55 0.08 250);
 
-  /* ====== Gráficos ====== */
+  /* Gráficos*/
   --chart-1: oklch(0.50 0.10 250);
   --chart-2: oklch(0.65 0.10 210);
   --chart-3: oklch(0.58 0.12 190);
   --chart-4: oklch(0.70 0.08 230);
   --chart-5: oklch(0.78 0.10 250);
 
-  /* ====== Sidebar ====== */
+  /*Cores barra lateral*/
   --sidebar: oklch(0.25 0.06 250);
   --sidebar-foreground: oklch(0.96 0.01 250);
   --sidebar-primary: oklch(0.50 0.10 250);
@@ -213,7 +213,7 @@ body {
   }
 }
 
-/* Estilos aplicados ao Content do AlertDialog */
+/*Estilos Content do AlertDialog*/
 .alert-dialog-content-animate {
   animation:
     dialog-backdrop 0.20s ease-out,

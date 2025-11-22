@@ -51,7 +51,7 @@ export default function App() {
     <AuthProvider>
       <Routes>
         <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/register" element={<Register />} />
+        <Route path="/auth/cadastro" element={<Register />} />
 
         <Route
           path="/cadastro-da-organizacao"

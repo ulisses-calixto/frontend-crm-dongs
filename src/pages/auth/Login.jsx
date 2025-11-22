@@ -59,7 +59,7 @@ export default function Login() {
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
-            {/* EMAIL */}
+            {/*Email*/}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Email</Label>
               <Input
@@ -72,7 +72,7 @@ export default function Login() {
               )}
             </div>
 
-            {/* SENHA */}
+            {/*Senha*/}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Senha</Label>
               <Input
@@ -88,7 +88,7 @@ export default function Login() {
               )}
             </div>
 
-            {/* BOTÃO */}
+            {/*Botão de entrar*/}
             <Button
               type="submit"
               className="w-full h-11 rounded-xl text-base font-medium"
@@ -97,11 +97,11 @@ export default function Login() {
               {isSubmitting ? "Entrando..." : "Entrar"}
             </Button>
 
-            {/* LINK */}
+            {/*links alternando Login/Registro*/}
             <p className="text-center text-sm text-slate-600">
               Não tem uma conta?{" "}
               <Link
-                to="/auth/register"
+                to="/auth/cadastro"
                 className="text-sky-700 font-semibold hover:underline"
               >
                 Cadastre-se

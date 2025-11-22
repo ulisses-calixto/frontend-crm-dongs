@@ -5,14 +5,11 @@ import { Toaster } from "sonner";
 export default function AuthLayout({ children }) {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-blue-50 p-6">
-
-      {/* Toaster global para telas de autenticação */}
       <Toaster
         position="bottom-right"
         richColors
       />
 
-      {/* Hero */}
       <div className="flex flex-col items-center text-center mb-8">
         <div className="w-20 h-20 bg-gradient-to-br from-emerald-700 to-sky-700 rounded-3xl flex items-center justify-center shadow-xl">
           <HeartHandshake className="w-12 h-12 text-white" />
@@ -24,7 +21,7 @@ export default function AuthLayout({ children }) {
         </p>
       </div>
 
-      {/* Card */}
+      {/*conteúdo*/}
       <div className="w-full max-w-sm">
         {children}
       </div>
