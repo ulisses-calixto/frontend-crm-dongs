@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { createPageUrl } from "@/utils";
+import { createPageUrl } from "@/utils/index";
 import { ArrowRight, Building2 } from "lucide-react";
 
 export default function FirstSetup() {

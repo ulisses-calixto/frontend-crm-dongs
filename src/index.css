@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @plugin "tailwindcss-animate";
 
+@import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
 
 /* Personalizações do tema (opcional) */
@@ -213,7 +213,7 @@ body {
   }
 }
 
-/*Estilos Content do AlertDialog*/
+/* Estilos Content do AlertDialog*/
 .alert-dialog-content-animate {
   animation:
     dialog-backdrop 0.20s ease-out,

@@ -165,7 +165,7 @@ export default function Layout({ children, currentPageName }) {
             </SidebarGroup>
           </SidebarContent>
 
-          {/* FOOTER */}
+          {/*Rodapé*/}
           <SidebarFooter className="border-t border-slate-200 p-4 mt-auto">
             <div className="flex items-center gap-3 mb-3">
               <Avatar className="w-10 h-10">
@@ -196,10 +196,10 @@ export default function Layout({ children, currentPageName }) {
           </SidebarFooter>
         </Sidebar>
 
-        {/* ------------------ MAIN ------------------ */}
+        {/*Principal*/}
         <main className="flex-1 flex flex-col overflow-hidden md:ml-60">
 
-          {/* HEADER MOBILE */}
+          {/*Cabeçalho Mobile*/}
           <header className="bg-white/90 backdrop-blur-sm border-b border-slate-200 px-6 py-4 md:hidden
           fixed top-0 left-0 right-0 z-50">
             <div className="flex items-center gap-4">
@@ -212,7 +212,7 @@ export default function Layout({ children, currentPageName }) {
             </div>
           </header>
 
-          /* Conteúdo */ */
+          {/*Conteúdo*/}
           <div className="flex-1 overflow-auto p-4 sm:p-6 md:p-8 pt-[80px] md:pt-0">
             {children}
           </div>

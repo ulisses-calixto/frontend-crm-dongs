@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import AuthLayout from "./AuthLayout";
+import { ArrowRight } from "lucide-react";
 
 const schema = z.object({
   email: z.string().email("Email inválido"),
@@ -22,6 +23,7 @@ export default function Login() {
   const { register, handleSubmit, formState } = useForm({
     resolver: zodResolver(schema),
   });
+
   const { errors, isSubmitting } = formState;
   const navigate = useNavigate();
   const auth = useAuth();
@@ -31,10 +33,9 @@ export default function Login() {
       const { token, user } = await loginService(values.email, values.password);
 
       if (token) {
-        auth.signIn(token, user);
-        navigate("/painel-de-controle");
+        await auth.signIn(token, user);
+        navigate("/painel-de-controle", { replace: true });
       }
-
     } catch (err) {
       toast.error("Erro ao efetuar login.", {
         description: "Verifique suas credenciais e tente novamente.",
@@ -46,9 +47,7 @@ export default function Login() {
     <AuthLayout>
       <Card className="border border-slate-200 shadow-lg rounded-2xl bg-white p-6 backdrop-blur-sm">
         <CardHeader className="space-y-2">
-          <CardTitle
-            className="text-center text-2xl font-semibold text-slate-800"
-          >
+          <CardTitle className="text-center text-2xl font-semibold text-slate-800">
             Acessar Conta
           </CardTitle>
           <p className="text-center text-sm text-slate-500">
@@ -58,8 +57,7 @@ export default function Login() {
 
         <CardContent>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-
-            {/*Email*/}
+            {/* Email */}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Email</Label>
               <Input
@@ -72,7 +70,7 @@ export default function Login() {
               )}
             </div>
 
-            {/*Senha*/}
+            {/* Senha */}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Senha</Label>
               <Input
@@ -82,22 +80,30 @@ export default function Login() {
                 className="h-11 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
               />
               {errors.password && (
-                <p className="text-xs text-red-600">
-                  {errors.password.message}
-                </p>
+                <p className="text-xs text-red-600">{errors.password.message}</p>
               )}
             </div>
 
-            {/*Botão de entrar*/}
+            {/* Botão */}
             <Button
               type="submit"
-              className="w-full h-11 rounded-xl text-base font-medium"
               disabled={isSubmitting}
+              className="w-full h-11 rounded-xl text-base font-medium"
             >
-              {isSubmitting ? "Entrando..." : "Entrar"}
+              {isSubmitting ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Entrando...
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  Entrar
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              )}
             </Button>
 
-            {/*links alternando Login/Registro*/}
+            {/* Link cadastro */}
             <p className="text-center text-sm text-slate-600">
               Não tem uma conta?{" "}
               <Link
@@ -107,7 +113,6 @@ export default function Login() {
                 Cadastre-se
               </Link>
             </p>
-
           </form>
         </CardContent>
       </Card>

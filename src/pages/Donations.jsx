@@ -168,7 +168,7 @@ export default function Donations() {
     <div className="sm:p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
 
-        {/*cabeçalho principal*/}
+        {/*Cabeçalho principal*/}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
           <div>
             <h1 className="text-3xl font-bold text-foreground">
@@ -223,7 +223,7 @@ export default function Donations() {
           />
         )}
 
-        {/*confirmação delete */}
+        {/*Confirmação delete */}
         <DeleteConfirmationDialog
           isOpen={!!donationToDelete}
           onClose={() => setDonationToDelete(null)}
@@ -232,7 +232,7 @@ export default function Donations() {
           description="Esta ação é irreversível."
         />
 
-        {/* listagem dos doadores*/}
+        {/* Listagem dos doadores*/}
         <DonationList
           donations={filteredDonations}
           loading={loading}

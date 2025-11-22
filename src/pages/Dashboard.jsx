@@ -133,7 +133,6 @@ export default function Dashboard() {
     [beneficiaries]
   );
 
-  //Carregamento
   if (loading) {
     return (
       <div className="p-6 md:p-8">

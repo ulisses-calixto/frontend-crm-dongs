@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import AuthLayout from "./AuthLayout";
+import { ArrowRight } from "lucide-react";
 
 const schema = z.object({
   adminName: z.string().min(2, "Nome do administrador é obrigatório"),
@@ -50,7 +51,9 @@ export default function Register() {
         err?.error?.message ||
         "Ocorreu um erro ao criar a conta. Tente novamente.";
 
-      toast.error("Erro ao criar conta.", { description: message });
+      toast.error("Erro ao criar conta.", { 
+        description: "Usuário já cadastrado.",
+      });
     }
   }
 
@@ -69,7 +72,7 @@ export default function Register() {
         <CardContent className="pt-4">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
 
-            {/* NOME */}
+            {/*Nome*/}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Nome completo</Label>
               <Input
@@ -83,7 +86,7 @@ export default function Register() {
               )}
             </div>
 
-            {/* EMAIL */}
+            {/*Email*/}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Email</Label>
               <Input
@@ -97,7 +100,7 @@ export default function Register() {
               )}
             </div>
 
-            {/* SENHA */}
+            {/*Senha */}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Senha</Label>
               <Input
@@ -112,16 +115,26 @@ export default function Register() {
               )}
             </div>
 
-            {/* BOTÃO */}
+            {/*Botão*/}
             <Button
               type="submit"
-              className="w-full h-11 rounded-xl text-base font-medium"
               disabled={isSubmitting}
+              className="w-full h-11 rounded-xl text-base font-medium"
             >
-              {isSubmitting ? "Cadastrando..." : "Cadastrar"}
+              {isSubmitting ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Cadastrando...
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  Cadastrar
+                  <ArrowRight className="w-4 h-4" />
+                </div>
+              )}
             </Button>
 
-            {/* LINKS */}
+            {/*Link de redirecionamento login */}
             <div className="text-center text-sm text-slate-600">
               <p>
                 Já possui conta?{" "}
