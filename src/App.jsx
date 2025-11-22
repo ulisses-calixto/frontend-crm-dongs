@@ -12,7 +12,6 @@ import Reports from "@/pages/Reports";
 import Settings from "@/pages/Settings";
 import Layout from "@/Layout";
 import { HeartHandshake } from "lucide-react";
-
 function LoadingScreen() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
@@ -28,7 +27,6 @@ function LoadingScreen() {
     </div>
   );
 }
-
 function ProtectedRoute({ children }) {
   const { signed, loading, user } = useAuth();
 
@@ -45,7 +43,6 @@ function ProtectedRoute({ children }) {
 
   return children;
 }
-
 export default function App() {
   return (
     <AuthProvider>
