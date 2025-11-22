@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; 
+import { useAuth } from "@/context/AuthContext"; 
 import apiClient from "@/services/apiClient";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { createPageUrl } from "@/utils/index";
+
 import { ArrowRight, Building2 } from "lucide-react";
 
 export default function FirstSetup() {
+  const navigate = useNavigate();
+  const auth = useAuth(); // <-- IMPORTANTE
   const [loading, setLoading] = useState(false);
+
   const [orgData, setOrgData] = useState({
     name: "",
     cnpj: "",
@@ -27,24 +33,29 @@ export default function FirstSetup() {
   const handleComplete = async () => {
     setLoading(true);
     try {
+      // 1️⃣ Pega dados do usuário logado
       const me = await apiClient.auth.me();
 
+      // 2️⃣ Cria a organização
       const organization = await apiClient.entities.Organization.create({
         ...orgData,
         admin_user_id: me.id,
       });
 
+      // 3️⃣ Atualiza o usuário na API
       await apiClient.auth.updateMe({
         organization_id: organization.id,
         department: "Administrador(a)",
       });
 
-      updateUser({
+      // 4️⃣ Atualiza no contexto Auth
+      auth.updateUser({
         ...me,
         organization_id: organization.id,
         department: "Administrador(a)",
       });
 
+      // 5️⃣ Envia para o painel
       navigate("/painel-de-controle", { replace: true });
 
     } catch (error) {

@@ -40,10 +40,12 @@ export default function Register() {
       if (token) {
         auth.signIn(token, user);
         toast.success("Conta criada com sucesso!", {
-          description: "Bem-vindo(a)! Você já pode acessar o painel.",
+          description: "Agora vamos criar sua organização.",
         });
-        navigate("/painel-de-controle");
+
+        navigate("/cadastro-da-organizacao", { replace: true });
       }
+
     } catch (err) {
       const message =
         err?.message ||
@@ -52,7 +54,7 @@ export default function Register() {
         "Ocorreu um erro ao criar a conta. Tente novamente.";
 
       toast.error("Erro ao criar conta.", { 
-        description: "Usuário já cadastrado.",
+        description: "Usuário já cadastrado." || message,
       });
     }
   }
