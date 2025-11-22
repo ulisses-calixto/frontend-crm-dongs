@@ -55,6 +55,11 @@ export function AuthProvider({ children }) {
     }
   }
 
+  const updateUser = (data) => {
+    setUser((prev) => ({ ...prev, ...data }));
+  };
+
+
   const handleLogin = async (token, userData) => {
     // O token já está na sessão do Supabase
     setUser(userData);
@@ -77,6 +82,7 @@ export function AuthProvider({ children }) {
         signIn: handleLogin,
         signOut: handleLogout,
         loading,
+        updateUser,
       }}
     >
       {children}

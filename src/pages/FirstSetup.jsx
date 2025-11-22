@@ -27,19 +27,26 @@ export default function FirstSetup() {
   const handleComplete = async () => {
     setLoading(true);
     try {
-      const user = await apiClient.auth.me();
+      const me = await apiClient.auth.me();
 
       const organization = await apiClient.entities.Organization.create({
         ...orgData,
-        admin_user_id: user.id,
+        admin_user_id: me.id,
       });
 
       await apiClient.auth.updateMe({
         organization_id: organization.id,
-        department: "Administração",
+        department: "Administrador(a)",
       });
 
-      window.location.href = createPageUrl("Dashboard");
+      updateUser({
+        ...me,
+        organization_id: organization.id,
+        department: "Administrador(a)",
+      });
+
+      navigate("/painel-de-controle", { replace: true });
+
     } catch (error) {
       console.error("Erro ao configurar organização:", error);
     }
