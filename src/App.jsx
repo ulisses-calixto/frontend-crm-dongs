@@ -110,7 +110,7 @@ export default function App() {
           }
         />
 
-        <Route path="*" element={<Navigate to="/painel-de-controle" replace />} />
+        <Route path="*" element={<Navigate to="/auth/login" replace />} />
       </Routes>
     </AuthProvider>
   );
