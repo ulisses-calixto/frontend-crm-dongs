@@ -154,7 +154,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
                   size="sm"
                   onClick={() => onDistribute(donation)}
                   disabled={donation.remaining_quantity === 0 || donation.donation_type === 'monetary'}
-                  className="cursor-pointer text-green-700 bg-green-100 hover:bg-green-200 border-green-700 rounded-md"
+                  className="cursor-pointer text-white bg-green-700 hover:bg-green-800 border-green-700 rounded-full"
                   title="Distribuir doação."
                 >
                   <Truck className="w-4 h-4" />

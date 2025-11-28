@@ -104,7 +104,7 @@ export default function OrganizationForm({ organization, onSave }) {
       </div>
 
       <div className="flex justify-end">
-        <Button className="rounded-md bg-blue-700 hover:bg-blue-900" type="submit" disabled={isSaving || isUploading}>
+        <Button className="rounded-full bg-blue-700 hover:bg-blue-900" type="submit" disabled={isSaving || isUploading}>
           <Save className="w-4 h-4" />
           {isSaving ? "Salvando..." : "Salvar Alterações"}
         </Button>

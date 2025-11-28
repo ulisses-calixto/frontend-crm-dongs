@@ -93,7 +93,7 @@ export default function Settings() {
         </div>
 
         <Card className="border bg-white rounded-md">
-          <CardHeader className="px-6 pb-1">
+          <CardHeader className="px-6 pb-2">
             <CardTitle className="text-md font-bold text-foreground">
               INFORMAÇÕES DA ONG.
             </CardTitle>

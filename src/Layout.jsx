@@ -91,11 +91,11 @@ export default function Layout({ children, currentPageName }) {
 
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-slate-50">
+      <div className="min-h-screen flex w-full bg-blue-50">
         {/* Sidebar */}
-        <Sidebar className="border-r border-slate-200 bg-slate-50 backdrop-blur-sm w-60 shrink-0">
+        <Sidebar className="border-r border bg-white  w-60 shrink-0">
           {/* HEADER */}
-          <SidebarHeader className="border-b border-slate-200 p-6 relative">
+          <SidebarHeader className="border-b bg-white p-6 relative">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-blue-700 rounded-md flex items-center justify-center">
                 {organization?.logo_url ? (
@@ -138,18 +138,18 @@ export default function Layout({ children, currentPageName }) {
           </SidebarHeader>
 
           {/* menu */}
-          <SidebarContent className="px-4 pt-4">
+          <SidebarContent className="px-2 pt-4 bg-white">
             <SidebarGroup>
               <SidebarGroupContent>
-                <SidebarMenu className="space-y-1">
+                <SidebarMenu className="space-y-2">
                   {navigationItems.map((item) => (
                     <SidebarMenuItem key={item.title}>
                       <NavLink
                         to={item.url}
                         className={({ isActive }) =>
-                          `flex items-center gap-2 px-4 h-10 rounded-md transition-all ${
+                          `flex items-center gap-2 px-4 h-10 rounded-md ${
                             isActive
-                              ? "bg-slate-50 border border-slate-600 text-slate-800 font-semibold"
+                              ? "bg-slate-200 text-slate-900"
                               : "text-slate-700 hover:bg-slate-200 hover:text-slate-900"
                           }`
                         }
@@ -165,7 +165,7 @@ export default function Layout({ children, currentPageName }) {
           </SidebarContent>
 
           {/*Rodapé*/}
-          <SidebarFooter className="border-t border-slate-200 p-4 mt-auto">
+          <SidebarFooter className="bg-white border-t p-4 mt-auto">
             <div className="flex items-center gap-3 mb-3">
               <Avatar className="w-10 h-10">
                 <AvatarFallback className="bg-slate-700 text-white font-bold">
