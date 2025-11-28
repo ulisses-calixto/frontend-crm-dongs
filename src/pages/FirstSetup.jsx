@@ -13,7 +13,7 @@ import { ArrowRight, Building2 } from "lucide-react";
 
 export default function FirstSetup() {
   const navigate = useNavigate();
-  const auth = useAuth(); // <-- IMPORTANTE
+  const auth = useAuth(); 
   const [loading, setLoading] = useState(false);
 
   const [orgData, setOrgData] = useState({
@@ -65,14 +65,14 @@ export default function FirstSetup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-50 p-4 md:p-6">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 md:p-6">
       <div className="max-w-2xl w-full">
-        <Card className="border border-slate-200 shadow-xl rounded-2xl bg-white/90 backdrop-blur-sm">
+        <Card className="border border-slate-200 rounded-md bg-white">
           <CardHeader>
             <div className="w-full mx-auto mb-2">
-              <div className="h-20 sm:h-24 bg-gradient-to-br from-emerald-700 to-sky-700 text-white rounded-2xl flex items-center justify-center shadow-lg px-4">
-                <CardTitle className="text-xl sm:text-2xl font-bold flex items-center justify-center gap-3 text-center">
-                  <Building2 className="w-8 h-8 sm:w-10 sm:h-10" />
+              <div className=" flex items-center justify-center px-4">
+                <CardTitle className="text-lg sm:text-2xl font-bold flex items-center justify-center gap-3 text-center">
+                  <Building2 className="w-6 h-6 sm:w-8 sm:h-8" />
                   Cadastro da Organização
                 </CardTitle>
               </div>
@@ -83,7 +83,7 @@ export default function FirstSetup() {
             </div>
           </CardHeader>
 
-          <CardContent className="space-y-6 pt-3">
+          <CardContent className="space-y-4">
             {/* Nome e CNPJ */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-2">
@@ -94,7 +94,7 @@ export default function FirstSetup() {
                   placeholder="Ex: Instituto Esperança"
                   value={orgData.name}
                   onChange={(e) => handleOrgInputChange("name", e.target.value)}
-                  className="h-11 sm:h-12 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                  className="h-11 sm:h-12 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                   required
                 />
               </div>
@@ -105,7 +105,7 @@ export default function FirstSetup() {
                   placeholder="00.000.000/0001-00"
                   value={orgData.cnpj}
                   onChange={(e) => handleOrgInputChange("cnpj", e.target.value)}
-                  className="h-11 sm:h-12 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                  className="h-11 sm:h-12 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                   required
                 />
               </div>
@@ -117,12 +117,12 @@ export default function FirstSetup() {
                 Descrição da Missão *
               </Label>
               <Textarea
-                placeholder="Descreva brevemente a missão e os objetivos da organização..."
+                placeholder="Descreva brevemente a missão e os objetivos da organização"
                 value={orgData.description}
                 onChange={(e) =>
                   handleOrgInputChange("description", e.target.value)
                 }
-                className="h-28 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-28 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                 required
               />
             </div>
@@ -138,7 +138,7 @@ export default function FirstSetup() {
                 onChange={(e) =>
                   handleOrgInputChange("address", e.target.value)
                 }
-                className="h-11 sm:h-12 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-11 sm:h-12 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
               />
             </div>
 
@@ -147,12 +147,12 @@ export default function FirstSetup() {
               <div className="space-y-2">
                 <Label className="font-semibold text-slate-700">Telefone</Label>
                 <Input
-                  placeholder="(11) 99999-9999"
+                  placeholder="(88) 99999-9999"
                   value={orgData.phone}
                   onChange={(e) =>
                     handleOrgInputChange("phone", e.target.value)
                   }
-                  className="h-11 sm:h-12 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                  className="h-11 sm:h-12 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                 />
               </div>
 
@@ -167,7 +167,7 @@ export default function FirstSetup() {
                   onChange={(e) =>
                     handleOrgInputChange("email", e.target.value)
                   }
-                  className="h-11 sm:h-12 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                  className="h-11 sm:h-12 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                 />
               </div>
             </div>
@@ -181,40 +181,38 @@ export default function FirstSetup() {
                 onChange={(e) =>
                   handleOrgInputChange("website", e.target.value)
                 }
-                className="h-11 sm:h-12 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-11 sm:h-12 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
               />
             </div>
 
             {/*Botão*/}
-            <div className="pt-4">
-              <Button
-                onClick={handleComplete}
-                disabled={
-                  loading ||
-                  !orgData.name ||
-                  !orgData.cnpj ||
-                  !orgData.description
-                }
-                className="w-full h-12 sm:h-14 rounded-xl text-base sm:text-lg font-semibold"
-              >
-                {loading ? (
-                  <div className="flex items-center gap-2">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    Salvando...
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-2">
-                    Concluir Cadastro
-                    <ArrowRight className="w-5 h-5" />
-                  </div>
-                )}
-              </Button>
-            </div>
+            
+            <Button
+              onClick={handleComplete}
+              disabled={
+                loading ||
+                !orgData.name ||
+                !orgData.cnpj ||
+                !orgData.description
+              }
+              className="w-full h-11 sm:h-12 rounded-full text-base sm:text-lg font-semibold"
+            >
+              {loading ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Concluir
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  Concluir
+                </div>
+              )}
+            </Button>
           </CardContent>
         </Card>
 
         <p className="text-center mt-4 text-xs sm:text-sm text-slate-500 max-w-lg mx-auto px-4">
-          Ao continuar, você concorda em utilizar o D'ONGs para gerenciar sua organização
+          Ao continuar, você concorda em utilizar o Sistema D'ONGs para gerenciar sua organização
           com responsabilidade e transparência.
         </p>
       </div>

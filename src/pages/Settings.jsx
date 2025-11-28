@@ -92,10 +92,10 @@ export default function Settings() {
           </p>
         </div>
 
-        <Card className="border bg-white rounded-2xl">
-          <CardHeader className="px-6 pb-2">
-            <CardTitle className="text-xl font-bold text-foreground">
-              Informações da sua Organização
+        <Card className="border bg-white rounded-md">
+          <CardHeader className="px-6 pb-1">
+            <CardTitle className="text-md font-bold text-foreground">
+              INFORMAÇÕES DA ONG.
             </CardTitle>
           </CardHeader>
           <CardContent className="pt-0 px-6">

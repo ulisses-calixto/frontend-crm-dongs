@@ -3,9 +3,9 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const COLORS = [
-  "#0ea5e9",
-  "#8b5cf6",
-  "#10b981",
+  "#0094d8",
+  "#8250f7",
+  "#00b176",
   "#f97316",
   "#ec4899",
   "#64748b",
@@ -37,15 +37,15 @@ export default function DonationTypePieChart({ donations }) {
   }, [donations]);
 
   return (
-    <Card className="border bg-white rounded-2xl">
-      <CardHeader className="px-6 pb-2">
-        <CardTitle className="text-lg font-bold text-foreground">
-          Tipos de Doação
+    <Card className="border bg-white rounded-md">
+      <CardHeader className="px-6 py-0">
+        <CardTitle className="text-md font-bold text-foreground">
+          TIPOS DE DOAÇÃO
         </CardTitle>
       </CardHeader>
 
       <CardContent className="pt-0">
-        <div className="h-[320px] w-full flex items-center justify-center">
+        <div className="h-[250px] w-full flex items-center justify-center">
           {data.length === 0 ? (
             <p className="text-muted-foreground">Aguardando dados...</p>
           ) : (

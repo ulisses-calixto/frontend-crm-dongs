@@ -27,7 +27,7 @@ export default function DeleteConfirmationDialog({
           sm:max-w-[460px]
           p-4
           md:p-6
-          rounded-2xl
+          rounded-md
           bg-card
           max-h-[85vh]
           animate-fade-in
@@ -51,10 +51,8 @@ export default function DeleteConfirmationDialog({
           <AlertDialogCancel asChild>
             <Button
               variant="outline"
-              className="
-                hover:bg-gray-100 
-                transition-all 
-                rounded-xl 
+              className=" 
+                rounded-full 
                 px-5
                 w-full sm:w-auto
               "
@@ -67,7 +65,7 @@ export default function DeleteConfirmationDialog({
           <AlertDialogAction asChild>
             <Button
               className="
-                rounded-xl 
+                rounded-full
                 px-5 
                 bg-red-700 
                 hover:bg-red-950 

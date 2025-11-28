@@ -7,15 +7,15 @@ import { formatDateForDisplay } from "@/utils/dateUtils";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const priorityColors = {
-  low: "bg-blue-100 text-blue-800",
-  medium: "bg-yellow-100 text-yellow-800",
-  high: "bg-red-100 text-red-800"
+  low: "bg-blue-100 text-blue-700",
+  medium: "bg-yellow-100 text-yellow-700",
+  high: "bg-red-100 text-red-700"
 };
 
 const statusColors = {
-  active: "bg-green-100 text-green-800",
-  inactive: "bg-gray-100 text-gray-800",
-  completed: "bg-purple-100 text-purple-800"
+  active: "bg-green-100 text-green-700",
+  inactive: "bg-gray-100 text-gray-700",
+  completed: "bg-purple-100 text-purple-700"
 };
 
 const priorityLabels = {
@@ -78,7 +78,7 @@ export default function BeneficiaryList({ beneficiaries, loading, onEdit, onDele
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {beneficiaries.map((beneficiary) => (
-        <Card key={beneficiary.id} className="border rounded-2xl bg-white/80 hover:shadow-md transition-all duration-300 flex flex-col">
+        <Card key={beneficiary.id} className="border rounded-md bg-white flex flex-col">
           <CardContent className="flex-1 flex flex-col">
             <div className="flex justify-between items-start mb-4">
               <div className="flex-1">
@@ -107,12 +107,12 @@ export default function BeneficiaryList({ beneficiaries, loading, onEdit, onDele
               </div>
               
               <div className="flex items-center gap-1 ml-2">
-                <Button variant="ghost" size="icon" onClick={() => onEdit(beneficiary)} className="rounded-xl hover:bg-orange-100 hover:text-orange-600"><Edit className="w-4 h-4" /></Button>
-                <Button variant="ghost" size="icon" onClick={() => onDelete(beneficiary)} className="rounded-xl hover:bg-red-100 hover:text-red-600"><Trash2 className="w-4 h-4" /></Button>
+                <Button variant="ghost" size="icon" onClick={() => onEdit(beneficiary)} className="rounded-md hover:bg-orange-100 hover:text-orange-600"><Edit className="w-4 h-4" /></Button>
+                <Button variant="ghost" size="icon" onClick={() => onDelete(beneficiary)} className="rounded-md hover:bg-red-100 hover:text-red-600"><Trash2 className="w-4 h-4" /></Button>
               </div>
             </div>
 
-            {/* 👉 NOVO BLOCO ADICIONADO: Data formatada */}
+            
             {beneficiary.registration_date && (
               <div className="flex items-center gap-2 mt-4 mb-2 text-sm text-gray-600">
                 <Calendar className="w-4 h-4" />

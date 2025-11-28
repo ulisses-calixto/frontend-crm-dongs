@@ -32,21 +32,21 @@ const statusLabels = {
 };
 
 const statusColors = {
-  received: "bg-blue-100 text-blue-800",
-  partially_distributed: "bg-orange-100 text-orange-800",
-  fully_distributed: "bg-green-100 text-green-800",
-  pending: "bg-yellow-100 text-yellow-800"
+  received: "bg-blue-100 text-blue-700",
+  partially_distributed: "bg-orange-100 text-orange-700",
+  fully_distributed: "bg-green-100 text-green-700",
+  pending: "bg-yellow-100 text-yellow-700"
 };
 
 const typeColors = {
-  monetary: "bg-green-100 text-green-800",
-  food: "bg-orange-100 text-orange-800",
-  clothing: "bg-blue-100 text-blue-800",
-  toys: "bg-pink-100 text-pink-800",
-  books: "bg-purple-100 text-purple-800",
-  electronics: "bg-gray-100 text-gray-800",
-  medicine: "bg-red-100 text-red-800",
-  other: "bg-yellow-100 text-yellow-800"
+  monetary: "bg-green-100 text-green-700",
+  food: "bg-orange-100 text-orange-700",
+  clothing: "bg-blue-100 text-blue-700",
+  toys: "bg-pink-100 text-pink-700",
+  books: "bg-purple-100 text-purple-700",
+  electronics: "bg-gray-100 text-gray-700",
+  medicine: "bg-red-100 text-red-700",
+  other: "bg-yellow-100 text-yellow-700"
 };
 
 const formatSafeDate = (dateString) => {
@@ -80,7 +80,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
 
   if (donations.length === 0) {
     return (
-      <Card className="border-1 bg-white/80">
+      <Card className="border-1 bg-white">
         <CardContent className="p-12 text-center">
           <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
             <Gift className="w-8 h-8 text-gray-400" />
@@ -89,7 +89,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
             Nenhuma doação encontrada
           </h3>
           <p className="text-gray-600">
-            Comece registrando sua primeira doação para começar a fazer a diferença.
+            Registre sua primeira doação.
           </p>
         </CardContent>
       </Card>
@@ -99,19 +99,19 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
   return (
     <div className="space-y-4">
       {donations.map((donation) => (
-        <Card key={donation.id} className="border rounded-2xl bg-white/80  hover:shadow-md transition-all duration-300">
+        <Card key={donation.id} className="border rounded-md bg-white">
           <CardContent>
             <div className="flex justify-between items-start flex-wrap">
               <div className="flex-1 space-y-3 min-w-[250px]">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <User className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-md flex items-center justify-center">
+                    <User className="w-8 h-8 text-blue-700" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
                       {donation.donor_name}
                     </h3>
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
                       <Calendar className="w-4 h-4" />
                       {formatSafeDate(donation.donation_date)}
                     </div>
@@ -128,7 +128,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
                     {statusLabels[donation.status] || donation.status}
                   </Badge>
                   {donation.value > 0 && (
-                    <Badge variant="outline" className="font-semibold">
+                    <Badge variant="outline" className="font-bold rounded-md">
                       R$ {donation.value.toFixed(2)}
                     </Badge>
                   )}
@@ -151,11 +151,11 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
 
               <div className="flex flex-col sm:flex-row items-center gap-2 ml-4 mt-4 sm:mt-0">
                 <Button
-                  variant="outline"
                   size="sm"
                   onClick={() => onDistribute(donation)}
                   disabled={donation.remaining_quantity === 0 || donation.donation_type === 'monetary'}
-                  className="bg-green-50 hover:bg-green-200 text-green-700 hover:text-green-800 border-green-300 rounded-xl"
+                  className="cursor-pointer text-green-700 bg-green-100 hover:bg-green-200 border-green-700 rounded-md"
+                  title="Distribuir doação."
                 >
                   <Truck className="w-4 h-4" />
                   Distribuir
@@ -165,7 +165,8 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
                     variant="ghost"
                     size="icon"
                     onClick={() => onEdit(donation)}
-                    className="rounded-xl hover:bg-orange-100 hover:text-orange-600"
+                    className="cursor-pointer rounded-md hover:bg-orange-100 hover:text-orange-700"
+                    title="Editar doação."
                   >
                     <Edit className="w-4 h-4" />
                   </Button>
@@ -173,7 +174,8 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
                     variant="ghost"
                     size="icon"
                     onClick={() => onDelete(donation)}
-                    className="rounded-xl hover:bg-red-100 hover:text-red-600"
+                    className="cursor-pointer rounded-md hover:bg-red-100 hover:text-red-700"
+                    title="Deletar doação."
                   >
                     <Trash2 className="w-4 h-4" />
                   </Button>

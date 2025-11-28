@@ -256,9 +256,9 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50 animate-in fade-in-0">
-      <Card className="w-full max-w-2xl max-h-[90vh] bg-white rounded-2xl overflow-y-auto animate-in zoom-in-95">
-        <CardHeader className="sticky top-0 z-10 mt-0 flex flex-row items-center justify-between bg-gradient-to-r from-emerald-600 to-sky-700 text-white rounded-t-2xl px-6 py-4">
-          <CardTitle className="text-2xl font-bold">
+      <Card className="w-full max-w-2xl max-h-[90vh] bg-white rounded-md overflow-y-auto animate-in zoom-in-95">
+        <CardHeader className="sticky top-0 z-10 mt-0 flex flex-row items-center justify-between bg-white px-6 pb-2">
+          <CardTitle className="text-xl font-bold">
             {donation ? "Editar Doação" : "Nova Doação"}
           </CardTitle>
           <Button
@@ -267,7 +267,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
             onClick={onCancel}
             title="Fechar janela"
             aria-label="Fechar"
-            className="text-white hover:text-white/80 hover:bg-white/40"
+            className="text-gray-700 hover:text-red-600 hover:bg-red-100"
           >
             <X className="w-5 h-5" />
           </Button>
@@ -293,7 +293,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                     }
                     placeholder="Nome completo"
                     required
-                    className={errors.donor_name ? "border-red-500" : "rounded-xl"}
+                    className={errors.donor_name ? "border-red-500" : "rounded-md"}
                   />
                   {errors.donor_name && (
                     <p className="text-sm text-red-600">{errors.donor_name}</p>
@@ -311,7 +311,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                       handleInputChange("donor_email", e.target.value)
                     }
                     placeholder="email@exemplo.com"
-                    className={errors.donor_email ? "border-red-500" : "rounded-xl"}
+                    className={errors.donor_email ? "border-red-500" : "rounded-md"}
                   />
                   {errors.donor_email && (
                     <p className="text-sm text-red-600">{errors.donor_email}</p>
@@ -328,7 +328,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                       handleInputChange("donor_phone", e.target.value)
                     }
                     placeholder="(88) 99999-9999"
-                    className="rounded-xl"
+                    className="rounded-md"
                   />
                 </div>
               </div>
@@ -349,7 +349,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                       handleInputChange("donation_type", value)
                     }
                   >
-                    <SelectTrigger id="donation_type" className={errors.donation_type ? "border-red-500" : "rounded-xl"}>
+                    <SelectTrigger id="donation_type" className={errors.donation_type ? "border-red-500" : "rounded-md"}>
                       <SelectValue placeholder="Selecione o tipo" />
                     </SelectTrigger>
                     <SelectContent>
@@ -378,7 +378,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                       handleInputChange("donation_date", e.target.value)
                     }
                     required
-                    className={errors.donation_date ? "border-red-500" : "rounded-xl"}
+                    className={errors.donation_date ? "border-red-500" : "rounded-md"}
                   />
                   {errors.donation_date && (
                     <p className="text-sm text-red-600">{errors.donation_date}</p>
@@ -398,7 +398,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                         handleInputChange("value", e.target.value)
                       }
                       placeholder="0,00"
-                      className={errors.value ? "border-red-500" : "rounded-xl"}
+                      className={errors.value ? "border-red-500" : "rounded-md"}
                     />
                     {errors.value && (
                       <p className="text-sm text-red-600">{errors.value}</p>
@@ -419,7 +419,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                           handleQuantityChange(e.target.value)
                         }
                         placeholder="1"
-                        className={errors.quantity ? "border-red-500" : "rounded-xl"}
+                        className={errors.quantity ? "border-red-500" : "rounded-md"}
                       />
                       {errors.quantity && (
                         <p className="text-sm text-red-600">{errors.quantity}</p>
@@ -436,7 +436,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                           handleInputChange("unit", e.target.value)
                         }
                         placeholder="kg, unidades, litros..."
-                        className={errors.unit ? "border-red-500" : "rounded-xl"}
+                        className={errors.unit ? "border-red-500" : "rounded-md"}
                       />
                       {errors.unit && (
                         <p className="text-sm text-red-600">{errors.unit}</p>
@@ -454,7 +454,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                       handleInputChange("status", value)
                     }
                   >
-                    <SelectTrigger id="status" className="rounded-xl">
+                    <SelectTrigger id="status" className="rounded-md">
                       <SelectValue placeholder="Selecione" />
                     </SelectTrigger>
                     <SelectContent>
@@ -481,7 +481,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                   }
                   placeholder="Descreva a doação (ex: Cesta básica, 10kg de arroz, etc.)"
                   required
-                  className={errors.description ? "border-red-500" : "rounded-xl"}
+                  className={errors.description ? "border-red-500" : "rounded-md"}
                 />
                 {errors.description && (
                   <p className="text-sm text-red-600">{errors.description}</p>
@@ -496,7 +496,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                     id="receipt_number"
                     name="receipt_number"
                     autoComplete="off"
-                    className="rounded-xl"
+                    className="rounded-md"
                     value={formData.receipt_number}
                     onChange={(e) =>
                       handleInputChange("receipt_number", e.target.value)
@@ -510,7 +510,7 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
                     id="notes"
                     name="notes"
                     autoComplete="off"
-                    className="rounded-xl"
+                    className="rounded-md"
                     value={formData.notes}
                     onChange={(e) =>
                       handleInputChange("notes", e.target.value)
@@ -522,14 +522,14 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
             </section>
           </CardContent>
 
-          <CardFooter className="p-6 bottom-0 bg-white z-10">
+          <CardFooter className="pt-6 bottom-0 bg-white z-10">
             <div className="flex justify-end gap-3 w-full">
-              <Button className="rounded-xl" type="button" variant="outline" onClick={onCancel}>
+              <Button className="rounded-md" type="button" variant="outline" onClick={onCancel}>
                 Cancelar
               </Button>
               <Button
                 type="submit"
-                className="bg-emerald-700 hover:bg-emerald-900 rounded-xl"
+                className="rounded-md bg-green-700 hover:bg-green-800 text-white"
                 disabled={isSubmitting}
               >
                 <Save className="w-4 h-4" />

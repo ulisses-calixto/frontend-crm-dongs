@@ -34,21 +34,21 @@ export default function StatsCard({
   const colors = colorClasses[color];
 
   return (
-    <Card className="relative overflow-hidden border rounded-2xl bg-white">
-      <CardHeader className="px-6 pb-1 ">
+    <Card className="relative overflow-hidden border rounded-lg bg-white gap-2">
+      <CardHeader className="px-6">
         <div className="flex items-center justify-between">
           <CardTitle className="text-base font-semibold text-foreground">
             {title}
           </CardTitle>
 
-          <div className={`p-2 rounded-xl ${colors.iconBg}`}>
+          <div className={`p-2 rounded-md ${colors.iconBg}`}>
             <Icon className={`w-6 h-6 ${colors.icon}`} />
           </div>
         </div>
       </CardHeader>
 
       <CardContent className="px-6">
-        <p className="text-3xl font-bold text-gray-900">
+        <p className="text-2xl font-bold text-slate-900">
           {value}
         </p>
 

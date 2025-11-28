@@ -12,10 +12,10 @@ import {
 
 export default function MonthlyChart({ data }) {
   return (
-    <Card className="border bg-white rounded-2xl">
-      <CardHeader className="px-6 pb-2">
-        <CardTitle className="text-lg font-bold text-foreground">
-          Doações por Mês
+    <Card className="border bg-white rounded-md">
+      <CardHeader className="px-6 py-0">
+        <CardTitle className="text-md font-bold text-foreground">
+          DOAÇÕES MENSAIS
         </CardTitle>
       </CardHeader>
 
@@ -51,9 +51,9 @@ export default function MonthlyChart({ data }) {
               <Tooltip
                 contentStyle={{
                   backgroundColor: "white",
-                  border: "none",
-                  borderRadius: "12px",
-                  boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+                  border: "1px solid #858585",
+                  borderRadius: "4px",
+                  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.377)",
                 }}
                 formatter={(value) => [`${value} doações`, "Quantidade"]}
               />
@@ -61,15 +61,14 @@ export default function MonthlyChart({ data }) {
               {/* Gradiente atualizado para harmonizar com o dashboard */}
               <defs>
                 <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#0ea5e9" />
-                  <stop offset="100%" stopColor="#0369a1" />
+                  <stop offset="100%" stopColor="#1d4ed8" />
                 </linearGradient>
               </defs>
 
               <Bar
                 dataKey="donations"
                 fill="url(#barGradient)"
-                radius={[6, 6, 0, 0]}
+                radius={[4, 4, 0, 0]}
                 maxBarSize={55}
               />
             </BarChart>

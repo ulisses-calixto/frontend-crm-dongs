@@ -116,9 +116,9 @@ export default function DistributionForm({
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50 animate-in fade-in-0">
-      <Card className="w-full max-w-lg rounded-2xl bg-white animate-in zoom-in-95">
+      <Card className="w-full max-w-lg rounded-md bg-white animate-in zoom-in-95">
         {/* HEADER */}
-        <CardHeader className="mt-0 flex flex-row items-center justify-between bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-t-2xl px-6 py-4">
+        <CardHeader className="mt-0 flex flex-row items-center justify-between bg-white px-6 pb-2">
           <CardTitle className="text-xl font-bold">
             Distribuir Doação
           </CardTitle>
@@ -128,17 +128,17 @@ export default function DistributionForm({
             onClick={onCancel}
             title="Fechar janela"
             aria-label="Fechar"
-            className="text-white hover:text-white/80 hover:bg-white/40"
+            className="text-gray-700 hover:text-red-600 hover:bg-red-100"
           >
-            <X className="w-5 h-5" />
+            <X className="w-10 h-5" />
           </Button>
         </CardHeader>
 
         {/* FORM */}
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-6">
-            <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200">
-              <h4 className="font-semibold text-emerald-800">
+            <div className="p-4 rounded-md bg-green-50 border border-green-200">
+              <h4 className="font-semibold text-green-700">
                 {donation.description}
               </h4>
               <p className="text-sm text-emerald-700">
@@ -160,7 +160,7 @@ export default function DistributionForm({
               >
                 <SelectTrigger
                   id="beneficiary_id"
-                  className={`rounded-xl ${
+                  className={`rounded-md ${
                     errors.beneficiary_id ? "border-red-500" : ""
                   }`}
                 >
@@ -191,7 +191,7 @@ export default function DistributionForm({
                   autoComplete="off"
                   value={formData.quantity}
                   onChange={(e) => handleQuantityChange(e.target.value)}
-                  className={`rounded-xl ${
+                  className={`rounded-md ${
                     errors.quantity ? "border-red-500" : ""
                   }`}
                 />
@@ -210,7 +210,7 @@ export default function DistributionForm({
                   onChange={(e) =>
                     handleInputChange("distribution_date", e.target.value)
                   }
-                  className={`rounded-xl ${
+                  className={`rounded-md ${
                     errors.distribution_date ? "border-red-500" : ""
                   }`}
                 />
@@ -231,7 +231,7 @@ export default function DistributionForm({
                 autoComplete="off"
                 onChange={(e) => handleInputChange("notes", e.target.value)}
                 placeholder="Alguma observação?"
-                className="rounded-xl"
+                className="rounded-md"
               />
             </div>
           </CardContent>
@@ -243,7 +243,7 @@ export default function DistributionForm({
                 type="button"
                 variant="outline"
                 onClick={onCancel}
-                className="rounded-xl"
+                className="rounded-full"
               >
                 Cancelar
               </Button>
@@ -251,10 +251,10 @@ export default function DistributionForm({
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white"
+                className="rounded-full bg-green-700 hover:bg-green-800 text-white"
               >
-                <Save className="w-4 h-4 mr-1" />
-                {isSubmitting ? "Registrando..." : "Registrar Distribuição"}
+                <Save className="w-4 h-4" />
+                {isSubmitting ? "Distribuindo..." : "Distribuir"}
               </Button>
             </div>
           </CardFooter>

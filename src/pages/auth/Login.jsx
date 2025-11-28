@@ -12,7 +12,6 @@ import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import AuthLayout from "./AuthLayout";
-import { ArrowRight } from "lucide-react";
 
 const schema = z.object({
   email: z.string().email("Email inválido"),
@@ -45,25 +44,25 @@ export default function Login() {
 
   return (
     <AuthLayout>
-      <Card className="border border-slate-200 shadow-lg rounded-2xl bg-white p-6 backdrop-blur-sm">
-        <CardHeader className="space-y-2">
+      <Card className="border border-slate-200 rounded-md bg-white p-4">
+        <CardHeader className="space-y-1">
           <CardTitle className="text-center text-2xl font-semibold text-slate-800">
-            Acessar Conta
+            Acesse sua Conta
           </CardTitle>
-          <p className="text-center text-sm text-slate-500">
+          <p className="text-center text-sm text-slate-600">
             Entre com suas credenciais para continuar
           </p>
         </CardHeader>
 
         <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Email */}
             <div className="space-y-1.5">
               <Label className="font-medium text-slate-700">Email</Label>
               <Input
                 {...register("email")}
                 placeholder="seu@email.com"
-                className="h-11 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-11 rounded-mb border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
               />
               {errors.email && (
                 <p className="text-xs text-red-600">{errors.email.message}</p>
@@ -77,7 +76,7 @@ export default function Login() {
                 type="password"
                 {...register("password")}
                 placeholder="••••••"
-                className="h-11 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-11 rounded-mb border-slate-300 focus-visible:ring-1 focus-visible:ring-slate-700"
               />
               {errors.password && (
                 <p className="text-xs text-red-600">{errors.password.message}</p>
@@ -88,17 +87,16 @@ export default function Login() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-11 rounded-xl text-base font-medium"
+              className="w-full h-11 rounded-full text-base font-medium"
             >
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Entrando...
+                  Entrar
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
                   Entrar
-                  <ArrowRight className="w-4 h-4" />
                 </div>
               )}
             </Button>
@@ -108,7 +106,7 @@ export default function Login() {
               Não tem uma conta?{" "}
               <Link
                 to="/auth/cadastro"
-                className="text-sky-700 font-semibold hover:underline"
+                className="text-slate-900 font-semibold hover:underline"
               >
                 Cadastre-se
               </Link>

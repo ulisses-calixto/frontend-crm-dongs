@@ -10,7 +10,7 @@ const donationTypeColors = {
   clothing: "bg-blue-100 text-blue-700",
   toys: "bg-pink-100 text-pink-700",
   books: "bg-purple-100 text-purple-700",
-  electronics: "bg-gray-100 text-gray-700",
+  electronics: "bg-slate-100 text-slate-700",
   medicine: "bg-red-100 text-red-700",
   other: "bg-yellow-100 text-yellow-700",
 };
@@ -36,20 +36,20 @@ const formatSafeDate = (dateString, formatStr = "dd/MM") => {
 
 export default function RecentActivity({ donations, beneficiaries }) {
   return (
-    <Card className="border rounded-2xl bg-white">
-      <CardHeader className="px-6 pb-3">
-        <CardTitle className="text-lg font-bold text-foreground">
-          Atividade Recente
+    <Card className="border rounded-md bg-white">
+      <CardHeader className="px-6">
+        <CardTitle className="text-md font-bold text-foreground">
+          ATIVIDADE RECENTE
         </CardTitle>
       </CardHeader>
 
       <CardContent className="px-6">
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           {/* Últimas Doações */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4 text-lg">
-              Últimas Doações
+              ÚLTIMAS DOAÇÕES
             </h3>
 
             <div className="space-y-3">
@@ -57,7 +57,7 @@ export default function RecentActivity({ donations, beneficiaries }) {
                 donations.map((donation) => (
                   <div
                     key={donation.id}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition"
+                    className="flex items-center justify-between p-4 bg-white border-b rounded-md"
                   >
                     <div>
                       <p className="font-medium text-gray-900">
@@ -70,7 +70,7 @@ export default function RecentActivity({ donations, beneficiaries }) {
 
                     <div className="flex items-center gap-3">
                       <Badge
-                        className={`${donationTypeColors[donation.donation_type] || donationTypeColors.other} px-3 py-1 rounded-lg`}
+                        className={`${donationTypeColors[donation.donation_type] || donationTypeColors.other} px-3 rounded-md`}
                       >
                         {donationTypeNames[donation.donation_type] || donation.donation_type}
                       </Badge>
@@ -83,16 +83,16 @@ export default function RecentActivity({ donations, beneficiaries }) {
                 ))
               ) : (
                 <p className="text-gray-500 text-center py-4">
-                  Nenhuma doação registrada ainda
+                  Nenhuma doação registrada
                 </p>
               )}
             </div>
           </div>
 
-          {/* Beneficiados Recentes */}
+          {/* Beneficiados recentes */}
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4 text-lg">
-              Beneficiados Recentes
+            <h3 className="font-semibold text-slate-900 mb-4 text-lg">
+              BENEFICIADOS RECENTES
             </h3>
 
             <div className="space-y-3">
@@ -100,7 +100,7 @@ export default function RecentActivity({ donations, beneficiaries }) {
                 beneficiaries.map((beneficiary) => (
                   <div
                     key={beneficiary.id}
-                    className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition"
+                    className="flex items-center justify-between p-4 bg-white border-b rounded-md"
                   >
                     <div>
                       <p className="font-medium text-gray-900">
@@ -114,7 +114,7 @@ export default function RecentActivity({ donations, beneficiaries }) {
 
                     <div className="flex items-center gap-3">
                       <Badge
-                        className={`px-3 py-1 rounded-lg ${
+                        className={`px-3 rounded-md ${
                           beneficiary.priority_level === "high"
                             ? "bg-red-100 text-red-700"
                             : beneficiary.priority_level === "medium"
@@ -138,7 +138,7 @@ export default function RecentActivity({ donations, beneficiaries }) {
                 ))
               ) : (
                 <p className="text-gray-500 text-center py-4">
-                  Nenhum beneficiado cadastrado ainda
+                  Nenhum beneficiado cadastrado
                 </p>
               )}
             </div>

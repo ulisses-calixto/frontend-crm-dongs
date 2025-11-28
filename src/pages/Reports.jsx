@@ -124,7 +124,7 @@ export default function Reports() {
         </div>
 
         {/* 🔹 Filtros */}
-        <div className="bg-card rounded-2xl border p-6 mb-6 print:hidden">
+        <div className="bg-white rounded-md border p-4 mb-6 print:hidden">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {/* Tipo */}
             <div className="flex flex-col gap-2">
@@ -132,10 +132,10 @@ export default function Reports() {
                 Tipo de Relatório
               </label>
               <Select value={reportType} onValueChange={setReportType}>
-                <SelectTrigger className="rounded-xl">
+                <SelectTrigger className="rounded-md">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
-                <SelectContent className="rounded-xl">
+                <SelectContent className="rounded-md">
                   <SelectItem value="donations">Doações</SelectItem>
                   <SelectItem value="beneficiaries">Beneficiados</SelectItem>
                 </SelectContent>
@@ -148,10 +148,10 @@ export default function Reports() {
                 Período
               </label>
               <Select value={periodType} onValueChange={setPeriodType}>
-                <SelectTrigger className="rounded-xl">
+                <SelectTrigger className="rounded-md">
                   <SelectValue placeholder="Selecione" />
                 </SelectTrigger>
-                <SelectContent className="rounded-xl">
+                <SelectContent className="rounded-md">
                   <SelectItem value="month">Este Mês</SelectItem>
                   <SelectItem value="year">Este Ano</SelectItem>
                 </SelectContent>
@@ -163,7 +163,7 @@ export default function Reports() {
               <Button
                 onClick={handlePrint}
                 disabled={loading || filteredData.length === 0}
-                className="bg-green-700 hover:bg-green-800 w-full md:w-auto rounded-xl"
+                className="bg-green-700 hover:bg-green-800 w-full md:w-auto rounded-full"
               >
                 <Printer className="w-5 h-5" />
                 Imprimir
@@ -173,20 +173,12 @@ export default function Reports() {
         </div>
 
         {/* 🔹 Conteúdo */}
-        <Card className="border-1 rounded-2xl bg-white">
+        <Card className="border-1 rounded-md bg-white">
           <CardHeader className="print:hidden px-6 pb-2">
-            <CardTitle className="text-lg font-bold text-foreground">
-              Prévia do Relatório
+            <CardTitle className="text-md font-bold text-foreground">
+              PRÉVIA DO RELATÓRIO
             </CardTitle>
           </CardHeader>
-
-          {/* 🔹 LOADING */}
-          {loading ? (
-            <div className="text-center py-8">
-              <div className="w-8 h-8 border-2 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-              <p className="text-gray-600">Carregando...</p>
-            </div>
-          ) : (
             <CardContent className="pt-0 px-6">
               <PrintableReport
                 ref={componentToPrintRef}
@@ -197,7 +189,6 @@ export default function Reports() {
                 formatSafeDate={formatSafeDate}
               />
             </CardContent>
-          )}
         </Card>
       </div>
 

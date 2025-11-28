@@ -61,9 +61,9 @@ export function AuthProvider({ children }) {
 
 
   const handleLogin = async (token, userData) => {
-    // O token já está na sessão do Supabase
+    await supabase.auth.setSession({ access_token: token, refresh_token: "" });
     setUser(userData);
-    navigate("/dashboard");
+    navigate("/painel-de-controle");
   };
 
   const handleLogout = async () => {
@@ -74,17 +74,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider
-      value={{
-        user,
-        session,
-        signed: !!session,
-        signIn: handleLogin,
-        signOut: handleLogout,
-        loading,
-        updateUser,
-      }}
-    >
+    <AuthContext.Provider value={{ user, session, signed: !!session, signIn: handleLogin, signOut: handleLogout, loading, updateUser }} >
       {children}
     </AuthContext.Provider>
   );

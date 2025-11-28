@@ -51,20 +51,20 @@ export default function DonationFilters({
   return (
     <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between flex-wrap">
       {/* Campo de pesquisa */}
-      <div className="relative w-full sm:w-[260px]">
-        <Search className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" />
+      <div className="relative w-full sm:w-[320px]">
+        <Search className="absolute left-3 top-2.5 w-4 h-4 text-slate-500" />
         <Input
           placeholder="Buscar doador..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="pl-9 rounded-xl"
+          className="pl-9 rounded-md"
         />
       </div>
 
       {/* Filtros */}
       <div className="flex flex-wrap items-center gap-4">
-        <div className="flex items-center gap-2 text-gray-700 font-medium">
-          <Filter className="w-5 h-5 text-green-600" />
+        <div className="flex items-center gap-2 text-slate-700 font-medium">
+          <Filter className="w-5 h-5 text-green-700" />
           <span>Filtrar:</span>
         </div>
 
@@ -73,7 +73,7 @@ export default function DonationFilters({
           value={filters.type}
           onValueChange={(value) => handleFilterChange("type", value)}
         >
-          <SelectTrigger className="w-[180px] rounded-xl">
+          <SelectTrigger className="w-[150px] rounded-md">
             <SelectValue placeholder="Tipo de doação" />
           </SelectTrigger>
           <SelectContent>
@@ -90,7 +90,7 @@ export default function DonationFilters({
           value={filters.status}
           onValueChange={(value) => handleFilterChange("status", value)}
         >
-          <SelectTrigger className="w-[200px] rounded-xl">
+          <SelectTrigger className="w-[180px] rounded-md">
             <SelectValue placeholder="Status da doação" />
           </SelectTrigger>
           <SelectContent>
@@ -106,10 +106,9 @@ export default function DonationFilters({
         <Button
           variant="outline"
           onClick={handleReset}
-          className="flex items-center gap-2 rounded-xl"
+          className="flex items-center gap-2 rounded-md bg-white"
         >
-          <RotateCcw className="w-4 h-4" />
-          Redefinir
+          <RotateCcw className="w-5 h-5" />
         </Button>
       </div>
     </div>

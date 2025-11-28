@@ -2,7 +2,6 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { Trash2 } from "lucide-react";
 
 // --- Labels
 const donationTypeLabels = {
@@ -35,7 +34,7 @@ const statusLabelsBeneficiary = {
   completed: "Concluído",
 };
 
-const DEFAULT_PRIMARY = "#0f172a";
+const DEFAULT_PRIMARY = "#000ecf";
 
 const PrintableReport = React.forwardRef(
   (
@@ -45,7 +44,6 @@ const PrintableReport = React.forwardRef(
       data = [],
       organization = {},
       formatSafeDate = (d) => (d ? format(new Date(d), "dd/MM/yyyy", { locale: ptBR }) : ""),
-      detailed = false,
       primaryColor = DEFAULT_PRIMARY,
       reportUrl = typeof window !== "undefined" ? window.location.href : "",
     },
@@ -160,7 +158,7 @@ const PrintableReport = React.forwardRef(
         <style>{`
           :root { --primary: ${primaryColor}; }
           .printable-container {
-            color: #111111;
+            color: #000000;
             font-family: Inter, ui-sans-serif, system-ui;
             background: #ffffff;
           }
@@ -183,7 +181,7 @@ const PrintableReport = React.forwardRef(
         {/* --- CHART --- */}
         {chartSvg && (
           <div className="mb-6">
-            <strong>Resumo Geral</strong>
+            <strong>RESUMO GERAL</strong>
             <div dangerouslySetInnerHTML={{ __html: chartSvg }} />
           </div>
         )}
@@ -195,7 +193,7 @@ const PrintableReport = React.forwardRef(
           <table className="w-full border-collapse">
             <thead>
               {reportType === "donations" ? (
-                <tr className="bg-gray-100">
+                <tr className="bg-white">
                   <th className="p-3 text-left">#</th>
                   <th className="p-3 text-left">Data</th>
                   <th className="p-3 text-left">Doador</th>
@@ -205,7 +203,7 @@ const PrintableReport = React.forwardRef(
                   <th className="p-3 text-center">Status</th>
                 </tr>
               ) : (
-                <tr className="bg-gray-100">
+                <tr className="bg-white">
                   <th className="p-3 text-left">#</th>
                   <th className="p-3 text-left">Data Cadastro</th>
                   <th className="p-3 text-left">Nome</th>
@@ -230,22 +228,8 @@ const PrintableReport = React.forwardRef(
             <div className="text-xs text-gray-500 mt-1">Nome e cargo.</div>
           </div>
 
-          <div className="text-right">
-            <div className="text-sm font-semibold text-gray-700">Verificação</div>
-            <div className="mt-2 flex justify-end">
-              {qrDataUrl ? (
-                <img
-                  src={qrDataUrl}
-                  alt="QR code"
-                  className="w-20 h-20 border rounded-xl"
-                />
-              ) : (
-                <div className="w-20 h-20 border rounded flex items-center justify-center text-gray-400 text-xs">
-                  QR
-                </div>
-              )}
-            </div>
-            <div className="text-xs text-gray-500 mt-1"><strong>{reportTitle}</strong> gerado pelo sistema D'ONGs.</div>
+          <div className="text-right-end mt-20">
+            <div className="text-xs text-gray-500"><strong>{reportTitle}</strong> gerado pelo sistema D'ONGs.</div>
           </div>
         </footer>
       </div>

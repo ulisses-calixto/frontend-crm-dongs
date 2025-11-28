@@ -110,7 +110,7 @@ export default function Beneficiaries() {
           </div>
 
           <Button
-            className="flex items-center gap-2 px-6 py-5 rounded-xl shadow-sm"
+            className="flex items-center gap-2 px-6 py-5 rounded-full"
             onClick={() => {
               setEditingBeneficiary(null);
               setShowForm(true);
@@ -121,7 +121,7 @@ export default function Beneficiaries() {
         </div>
 
         {/* Filtros */}
-        <div className="bg-card rounded-2xl border p-6 mb-8">
+        <div className="bg-white rounded-md border p-4 mb-6">
           <BeneficiaryFilters
             filters={filters}
             searchTerm={searchTerm}

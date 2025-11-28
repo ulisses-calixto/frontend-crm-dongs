@@ -47,27 +47,27 @@ export default function ImpactMetrics({ donations, beneficiaries }) {
       label: "Tipo Mais Doado",
       value: topDonationType,
       icon: Gift,
-      color: "text-sky-600",
+      color: "text-blue-700",
     },
     {
       label: "Vidas Impactadas",
       value: familiesImpacted,
       icon: Users,
-      color: "text-emerald-600",
+      color: "text-emerald-700",
     },
     {
       label: "Taxa de Distribuição",
       value: distributionRate,
       icon: Award,
-      color: "text-violet-600",
+      color: "text-violet-700",
     },
   ];
 
   return (
-    <Card className="border bg-white rounded-2xl">
-      <CardHeader className="px-6 pb-2">
-        <CardTitle className="text-lg font-bold text-foreground">
-          Métricas de Impacto
+    <Card className="border bg-white rounded-md">
+      <CardHeader className="px-6 pb-1">
+        <CardTitle className="text-md font-bold text-foreground">
+          MÉTRICAS DE IMPACTO
         </CardTitle>
       </CardHeader>
 
@@ -99,7 +99,7 @@ export default function ImpactMetrics({ donations, beneficiaries }) {
                   <span className="text-xs text-muted-foreground">
                     {metric.label}
                   </span>
-                  <span className="text-lg font-semibold text-foreground">
+                  <span className="text-lg font-bold text-foreground">
                     {metric.value}
                   </span>
                 </div>
@@ -109,11 +109,11 @@ export default function ImpactMetrics({ donations, beneficiaries }) {
         </div>
 
         {/* IMPACTO SOCIAL */}
-        <div className="mt-8 p-4 bg-gradient-to-r from-sky-50 to-emerald-50 border border-sky-200 rounded-xl">
-          <span className="text-sm font-semibold text-sky-700 block mb-1">
+        <div className="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-md">
+          <span className="text-sm font-semibold text-blue-700 block mb-1">
             Impacto Social
           </span>
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             A organização já alcançou <b>{familiesImpacted}</b> vidas através de{" "}
             <b>{donations.length}</b> atos generosos.
           </p>

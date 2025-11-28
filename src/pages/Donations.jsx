@@ -175,12 +175,12 @@ export default function Donations() {
               Gestão de Doações
             </h1>
             <p className="text-muted-foreground mt-1">
-              Controle, distribua e acompanhe as doações recebidas.
+              Distribua e acompanhe as doações recebidas.
             </p>
           </div>
 
           <Button
-            className="flex items-center gap-2 px-6 py-5 rounded-xl shadow-sm"
+            className="flex items-center gap-2 px-6 py-5 rounded-full"
             onClick={() => {
               setEditingDonation(null);
               setShowForm(true);
@@ -191,7 +191,7 @@ export default function Donations() {
         </div>
 
         {/*Cabeçalho filtro*/}
-        <div className="bg-card rounded-2xl border p-6 mb-8">
+        <div className="bg-white rounded-md border p-4 mb-6">
           <DonationFilters
             filters={filters}
             searchTerm={searchTerm}

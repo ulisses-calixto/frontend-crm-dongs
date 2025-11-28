@@ -217,9 +217,9 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50 animate-in fade-in-0">
-      <Card className="w-full max-w-2xl max-h-[90vh] bg-white rounded-2xl overflow-y-auto animate-in zoom-in-95">
-        <CardHeader className="sticky top-0 z-10 mt-0 flex flex-row items-center justify-between bg-gradient-to-r from-sky-600 to-emerald-700 text-white rounded-t-2xl px-6 py-4">
-          <CardTitle className="text-2xl font-bold">
+      <Card className="w-full max-w-2xl max-h-[90vh] bg-white rounded-md overflow-y-auto animate-in zoom-in-95">
+        <CardHeader className="sticky top-0 z-10 mt-0 flex flex-row items-center justify-between bg-white px-6 pb-2">
+          <CardTitle className="text-xl font-bold">
             {beneficiary ? "Editar Beneficiado" : "Novo Beneficiado"}
           </CardTitle>
           <Button
@@ -228,7 +228,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
             onClick={onCancel}
             title="Fechar janela"
             aria-label="Fechar"
-            className="text-white hover:text-white/80 hover:bg-white/40"
+            className="text-gray-700 hover:text-red-600 hover:bg-red-100"
           >
             <X className="w-5 h-5" />
           </Button>
@@ -252,7 +252,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     placeholder="Nome completo"
                     required
-                    className={errors.name ? "border-red-500" : "rounded-xl"}
+                    className={errors.name ? "border-red-500" : "rounded-md"}
                   />
                   {errors.name && (
                     <p className="text-sm text-red-600">{errors.name}</p>
@@ -271,7 +271,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                       handleInputChange("email", e.target.value)
                     }
                     placeholder="email@exemplo.com"
-                    className={errors.email ? "border-red-500" : "rounded-xl"}
+                    className={errors.email ? "border-red-500" : "rounded-md"}
                   />
                   {errors.email && (
                     <p className="text-sm text-red-600">{errors.email}</p>
@@ -289,7 +289,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                     onChange={(e) => handleInputChange("cpf", e.target.value)}
                     placeholder="000.000.000-00"
                     required
-                    className={errors.cpf ? "border-red-500" : "rounded-xl"}
+                    className={errors.cpf ? "border-red-500" : "rounded-md"}
                   />
                   {errors.cpf && (
                     <p className="text-sm text-red-600">{errors.cpf}</p>
@@ -307,7 +307,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                     onChange={(e) =>
                       handleInputChange("birth_date", e.target.value)
                     }
-                    className={errors.birth_date ? "border-red-500" : "rounded-xl"}
+                    className={errors.birth_date ? "border-red-500" : "rounded-md"}
                   />
                   {errors.birth_date && (
                     <p className="text-sm text-red-600">{errors.birth_date}</p>
@@ -325,7 +325,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                       handleInputChange("phone", e.target.value)
                     }
                     placeholder="(11) 99999-9999"
-                    className={errors.phone ? "border-red-500" : "rounded-xl"}
+                    className={errors.phone ? "border-red-500" : "rounded-md"}
                   />
                   {errors.phone && (
                     <p className="text-sm text-red-600">{errors.phone}</p>
@@ -351,7 +351,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                   }
                   placeholder="Rua, número, bairro, cidade, estado, CEP"
                   required
-                  className={errors.address ? "border-red-500" : "rounded-xl"}
+                  className={errors.address ? "border-red-500" : "rounded-md"}
                 />
                 {errors.address && (
                   <p className="text-sm text-red-600">{errors.address}</p>
@@ -377,7 +377,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                       handleInputChange("family_size", e.target.value)
                     }
                     required
-                    className={errors.family_size ? "border-red-500" : "rounded-xl"}
+                    className={errors.family_size ? "border-red-500" : "rounded-md"}
                   />
                   {errors.family_size && (
                     <p className="text-sm text-red-600">{errors.family_size}</p>
@@ -393,7 +393,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                       handleInputChange("monthly_income", e.target.value)
                     }
                     placeholder="0,00"
-                    className={errors.monthly_income ? "border-red-500" : "rounded-xl"}
+                    className={errors.monthly_income ? "border-red-500" : "rounded-md"}
                   />
                   {errors.monthly_income && (
                     <p className="text-sm text-red-600">{errors.monthly_income}</p>
@@ -409,7 +409,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                       handleInputChange("priority_level", value)
                     }
                   >
-                    <SelectTrigger className="rounded-xl">
+                    <SelectTrigger className="rounded-md">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -442,7 +442,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                       handleInputChange("status", value)
                     }
                   >
-                    <SelectTrigger className="rounded-xl">
+                    <SelectTrigger className="rounded-md">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -470,7 +470,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                       handleInputChange("registration_date", e.target.value)
                     }
                     required
-                    className={errors.registration_date ? "border-red-500" : "rounded-xl"}
+                    className={errors.registration_date ? "border-red-500" : "rounded-md"}
                   />
                   {errors.registration_date && (
                     <p className="text-sm text-red-600">{errors.registration_date}</p>
@@ -486,7 +486,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
                 id="notes"
                 name="notes"
                 autoComplete="off"
-                className="rounded-xl"
+                className="rounded-md"
                 value={formData.notes}
                 onChange={(e) =>
                   handleInputChange("notes", e.target.value)
@@ -498,12 +498,12 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
 
           <CardFooter className="p-6 bottom-0 bg-card z-10">
             <div className="flex justify-end gap-3 w-full">
-              <Button className="rounded-xl" type="button" variant="outline" onClick={onCancel}>
+              <Button className="rounded-full" type="button" variant="outline" onClick={onCancel}>
                 Cancelar
               </Button>
               <Button
                 type="submit"
-                className="bg-sky-700 hover:bg-sky-900 rounded-xl"
+                className="bg-sky-700 hover:bg-sky-900 rounded-full"
                 disabled={isSubmitting}
               >
                 <Save className="w-4 h-4" />

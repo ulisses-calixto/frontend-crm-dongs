@@ -61,18 +61,18 @@ export default function Register() {
 
   return (
     <AuthLayout>
-      <Card className="border border-slate-200 shadow-xl rounded-2xl bg-white p-6">
+      <Card className="border border-slate-200 rounded-md bg-white p-4">
         <CardHeader className="mb-1">
           <CardTitle className="text-center text-2xl font-semibold text-slate-800">
             Criar Conta
           </CardTitle>
-          <p className="text-center text-sm text-slate-500 mt-2">
+          <p className="text-center text-sm text-slate-600">
             Crie sua conta administrativa para começar a usar o sistema
           </p>
         </CardHeader>
 
-        <CardContent className="pt-4">
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+        <CardContent>
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
 
             {/*Nome*/}
             <div className="space-y-1.5">
@@ -80,7 +80,7 @@ export default function Register() {
               <Input
                 {...register("adminName")}
                 placeholder="Nome do administrador"
-                className="h-11 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-11 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                 autoComplete="name"
               />
               {errors.adminName && (
@@ -94,7 +94,7 @@ export default function Register() {
               <Input
                 {...register("adminEmail")}
                 placeholder="seu@email.com"
-                className="h-11 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-11 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                 autoComplete="email"
               />
               {errors.adminEmail && (
@@ -109,7 +109,7 @@ export default function Register() {
                 type="password"
                 {...register("adminPassword")}
                 placeholder="••••••"
-                className="h-11 rounded-xl border-slate-300 focus-visible:ring-2 focus-visible:ring-sky-600"
+                className="h-11 rounded-md border-slate-300 focus-visible:ring-2 focus-visible:ring-slate-700"
                 autoComplete="new-password"
               />
               {errors.adminPassword && (
@@ -121,17 +121,16 @@ export default function Register() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-11 rounded-xl text-base font-medium"
+              className="w-full h-11 rounded-full text-base font-medium"
             >
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Cadastrando...
+                  Cadastrar
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
                   Cadastrar
-                  <ArrowRight className="w-4 h-4" />
                 </div>
               )}
             </Button>
@@ -140,7 +139,7 @@ export default function Register() {
             <div className="text-center text-sm text-slate-600">
               <p>
                 Já possui conta?{" "}
-                <Link to="/auth/login" className="text-sky-700 font-semibold hover:underline">
+                <Link to="/auth/login" className="text-slate-900 font-semibold hover:underline">
                   Fazer login
                 </Link>
               </p>

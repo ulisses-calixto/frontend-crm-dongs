@@ -4,21 +4,17 @@ import { Toaster } from "sonner";
 
 export default function AuthLayout({ children }) {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center bg-blue-50 p-6">
+    <div className="relative min-h-screen flex flex-col items-center justify-center bg-zinc-50 p-6">
       <Toaster
         position="bottom-right"
         richColors
       />
 
-      <div className="flex flex-col items-center text-center mb-8">
-        <div className="w-20 h-20 bg-gradient-to-br from-emerald-700 to-sky-700 rounded-3xl flex items-center justify-center shadow-xl">
-          <HeartHandshake className="w-12 h-12 text-white" />
+      <div className="flex flex-row items-center align-center justify-center text-center mb-4 gap-2">
+        <div className="w-8 h-8 bg-blue-700 rounded-md flex items-center justify-center">
+          <HeartHandshake className="w-5 h-5 text-white" />
         </div>
-
-      <h1 className="text-3xl font-bold mt-4 text-gray-900">D'ONGs</h1>
-        <p className="text-gray-700 mt-1 max-w-xs">
-          Gerencie sua organização de forma rápida e transparente.
-        </p>
+        <h1 className="text-xl font-bold text-gray-900">D'ONGs</h1>
       </div>
 
       {/*conteúdo*/}
@@ -26,6 +22,9 @@ export default function AuthLayout({ children }) {
         {children}
       </div>
 
+        <p className="text-center mt-4 text-xs sm:text-sm text-slate-500 max-w-lg mx-auto px-4">
+          Gerencie sua organização de forma rápida e transparente.
+        </p>
     </div>
   );
 }
