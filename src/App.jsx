@@ -16,10 +16,9 @@ function LoadingScreen() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       <div className="text-center">
-        <div className="relative w-20 h-20 mx-auto mb-6">
-          <div className="absolute inset-0 bg-primary rounded-3xl animate-pulse"></div>
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-700 to-sky-700 text-sky-50 rounded-3xl flex items-center justify-center animate-bounce">
-            <HeartHandshake className="w-10 h-10 text-primary-foreground" />
+        <div className="relative w-12 h-12 mx-auto mb-2">
+          <div className="absolute inset-0 bg-blue-700 text-white rounded-md flex items-center justify-center animate-pulse">
+            <HeartHandshake className="w-8 h-8 text-primary-foreground" />
           </div>
         </div>
         <p className="text-muted-foreground mt-4 text-sm animate-fade-in">Carregando...</p>
