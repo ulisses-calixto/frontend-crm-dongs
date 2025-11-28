@@ -147,7 +147,7 @@ export default function Layout({ children, currentPageName }) {
                       <NavLink
                         to={item.url}
                         className={({ isActive }) =>
-                          `flex items-center gap-2 px-4 h-10 rounded-md ${
+                          `flex items-center text-md gap-2 px-4 h-10 rounded-md ${
                             isActive
                               ? "bg-slate-200 text-slate-900"
                               : "text-slate-700 hover:bg-slate-200 hover:text-slate-900"
