@@ -110,7 +110,7 @@ export default function Reports() {
   const filteredData = getFilteredData();
 
   return (
-    <div className="sm:p-6 md:p-8">
+    <div className="p-4 sm:p-6 md:p-8">
       <div className="mx-auto space-y-10">
         {/* 🔹 Cabeçalho */}
         <div className="mb-8">

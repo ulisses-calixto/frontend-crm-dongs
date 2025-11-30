@@ -81,7 +81,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="p-6 md:p-8">
+    <div className="p-4 sm:p-6 md:p-8">
       <div className="mx-auto space-y-10">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground">

@@ -65,7 +65,7 @@ export default function FirstSetup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 md:p-6">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4 sm:p-6 md:p-8">
       <div className="max-w-2xl w-full">
         <Card className="border border-slate-200 rounded-md bg-white">
           <CardHeader>
