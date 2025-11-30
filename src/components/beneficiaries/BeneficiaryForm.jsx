@@ -216,7 +216,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50 animate-in fade-in-0">
+    <div className="fixed h-full inset-0 bg-black/60 flex items-center justify-center p-4 z-50 animate-in fade-in-0">
       <Card className="w-full max-w-2xl max-h-[90vh] bg-white rounded-md overflow-y-auto animate-in zoom-in-95">
         <CardHeader className="sticky top-0 z-10 mt-0 flex flex-row items-center justify-between bg-white px-6 pb-2">
           <CardTitle className="text-xl font-bold">
@@ -496,7 +496,7 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
             </div>
           </CardContent>
 
-          <CardFooter className="pt-6 bottom-0 bg-card z-10">
+          <CardFooter className="pt-6 bottom-0 z-10">
             <div className="flex justify-end gap-3 w-full">
               <Button className="rounded-md hover:bg-red-100 hover:text-red-700" type="button" variant="outline" onClick={onCancel}>
                 Cancelar

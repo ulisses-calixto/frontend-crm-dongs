@@ -110,7 +110,7 @@ export default function BeneficiaryList({ beneficiaries, loading, onEdit, onDele
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => onEdit(donation)}
+                  onClick={() => onEdit(beneficiary)}
                   className="cursor-pointer rounded-md hover:bg-orange-100 hover:text-orange-700"
                   title="Editar beneficiado."
                 >
@@ -119,7 +119,7 @@ export default function BeneficiaryList({ beneficiaries, loading, onEdit, onDele
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => onDelete(donation)}
+                  onClick={() => onDelete(beneficiary)}
                   className="cursor-pointer rounded-md hover:bg-red-100 hover:text-red-700"
                   title="Deletar beneficiado."
                 >

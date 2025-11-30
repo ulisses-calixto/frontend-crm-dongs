@@ -104,9 +104,6 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
             <div className="flex justify-between items-start flex-wrap">
               <div className="flex-1 space-y-3 min-w-[250px]">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-md flex items-center justify-center">
-                    <User className="w-8 h-8 text-blue-700" />
-                  </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
                       {donation.donor_name}
@@ -149,7 +146,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center gap-2 ml-4 mt-4 sm:mt-0">
+              <div className="flex flex-row flex-wrap items-center gap-2 ml-0 mt-4">
                 <Button
                   size="sm"
                   onClick={() => onDistribute(donation)}
@@ -160,6 +157,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
                   <Truck className="w-4 h-4" />
                   Distribuir
                 </Button>
+
                 <div className="flex">
                   <Button
                     variant="ghost"
@@ -170,6 +168,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
                   >
                     <Edit className="w-4 h-4" />
                   </Button>
+
                   <Button
                     variant="ghost"
                     size="icon"

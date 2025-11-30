@@ -28,20 +28,21 @@ export default function DeleteConfirmationDialog({
           p-4
           md:p-6
           rounded-md
-          bg-card
+          bg-white
           max-h-[85vh]
           animate-fade-in
+          fade-in-0
         "
       >
         <AlertDialogHeader>
           <AlertDialogTitle
-            className="text-xl sm:text-2xl font-bold text-red-800"
+            className="text-xl sm:text-2xl font-bold text-red-700"
           >
             {title}
           </AlertDialogTitle>
 
           <AlertDialogDescription
-            className="text-sm sm:text-md text-gray-600 mt-2 leading-relaxed"
+            className="text-md sm:text-md text-gray-600 mt-2 leading-relaxed"
           >
             {description}
           </AlertDialogDescription>
@@ -63,8 +64,8 @@ export default function DeleteConfirmationDialog({
               className="
                 rounded-md
                 px-5 
-                bg-red-800 
-                hover:bg-red-950 
+                bg-red-700 
+                hover:bg-red-900 
                 text-white
                 w-full sm:w-auto
               "
