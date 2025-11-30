@@ -82,7 +82,7 @@ export default function Settings() {
 
   return (
     <div className="p-6 md:p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto space-y-10">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground">
             Configurações da Organização
@@ -101,7 +101,6 @@ export default function Settings() {
           <CardContent className="pt-0 px-6">
             {loading ? (
               <div className="text-center py-8">
-                <div className="w-8 h-8 border-2 border-sky-600 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
                 <p className="text-gray-600">Carregando...</p>
               </div>
             ) : organization ? (

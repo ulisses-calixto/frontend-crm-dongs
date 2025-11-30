@@ -11,21 +11,17 @@ import Beneficiaries from "@/pages/Beneficiaries";
 import Reports from "@/pages/Reports";
 import Settings from "@/pages/Settings";
 import Layout from "@/Layout";
-import { HeartHandshake } from "lucide-react";
+
 function LoadingScreen() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      <div className="text-center">
-        <div className="relative w-12 h-12 mx-auto mb-2">
-          <div className="absolute inset-0 bg-blue-700 text-white rounded-md flex items-center justify-center animate-pulse">
-            <HeartHandshake className="w-8 h-8 text-primary-foreground" />
-          </div>
-        </div>
-        <p className="text-muted-foreground mt-4 text-sm animate-fade-in">Carregando...</p>
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="text-center py-8">
+        <p className="text-gray-600">Carregando...</p>
       </div>
     </div>
   );
 }
+
 function ProtectedRoute({ children }) {
   const { signed, loading, user } = useAuth();
 

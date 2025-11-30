@@ -496,14 +496,14 @@ export default function BeneficiaryForm({ beneficiary, onSubmit, onCancel }) {
             </div>
           </CardContent>
 
-          <CardFooter className="p-6 bottom-0 bg-card z-10">
+          <CardFooter className="pt-6 bottom-0 bg-card z-10">
             <div className="flex justify-end gap-3 w-full">
-              <Button className="rounded-full" type="button" variant="outline" onClick={onCancel}>
+              <Button className="rounded-md hover:bg-red-100 hover:text-red-700" type="button" variant="outline" onClick={onCancel}>
                 Cancelar
               </Button>
               <Button
                 type="submit"
-                className="bg-sky-700 hover:bg-sky-900 rounded-full"
+                className="bg-green-700 hover:bg-green-900 rounded-md"
                 disabled={isSubmitting}
               >
                 <Save className="w-4 h-4" />

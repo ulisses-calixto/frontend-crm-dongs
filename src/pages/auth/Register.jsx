@@ -64,10 +64,10 @@ export default function Register() {
       <Card className="border border-slate-200 rounded-md bg-white p-4">
         <CardHeader className="mb-1">
           <CardTitle className="text-center text-2xl font-semibold text-slate-800">
-            Criar Conta
+            Criar conta
           </CardTitle>
           <p className="text-center text-sm text-slate-600">
-            Crie sua conta administrativa para começar a usar o sistema
+            Crie sua conta administrativa para começar
           </p>
         </CardHeader>
 
@@ -121,16 +121,16 @@ export default function Register() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-11 rounded-full text-base font-medium"
+              className="w-full h-11 bg-blue-700 hover:bg-blue-500 rounded-md text-base font-medium"
             >
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
                   <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Cadastrar
+                  Criar
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
-                  Cadastrar
+                  Criar
                 </div>
               )}
             </Button>

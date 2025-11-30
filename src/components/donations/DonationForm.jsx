@@ -524,12 +524,12 @@ export default function DonationForm({ donation, onSubmit, onCancel }) {
 
           <CardFooter className="pt-6 bottom-0 bg-white z-10">
             <div className="flex justify-end gap-3 w-full">
-              <Button className="rounded-full" type="button" variant="outline" onClick={onCancel}>
+              <Button className="rounded-md hover:bg-red-100 hover:text-red-700" type="button" variant="outline" onClick={onCancel}>
                 Cancelar
               </Button>
               <Button
                 type="submit"
-                className="rounded-full bg-green-700 hover:bg-green-800 text-white"
+                className="bg-green-700 hover:bg-green-900 rounded-md"
                 disabled={isSubmitting}
               >
                 <Save className="w-4 h-4" />

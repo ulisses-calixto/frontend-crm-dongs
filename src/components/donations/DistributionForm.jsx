@@ -243,7 +243,7 @@ export default function DistributionForm({
                 type="button"
                 variant="outline"
                 onClick={onCancel}
-                className="rounded-full"
+                className="rounded-md hover:bg-red-100 hover:text-red-700"
               >
                 Cancelar
               </Button>
@@ -251,7 +251,7 @@ export default function DistributionForm({
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="rounded-full bg-green-700 hover:bg-green-800 text-white"
+                className="text-white bg-green-700 hover:bg-green-900 rounded-md"
               >
                 <Save className="w-4 h-4" />
                 {isSubmitting ? "Distribuindo..." : "Distribuir"}

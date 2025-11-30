@@ -152,8 +152,7 @@ export default function Dashboard() {
 
   return (
     <div className="p-4 sm:p-6 md:p-8">
-
-      <div className="max-w-7xl mx-auto space-y-10">
+      <div className="mx-auto space-y-10">
 
         {/*Cabeçalho*/}
         <header className="text-center md:text-left">

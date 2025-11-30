@@ -111,7 +111,7 @@ export default function Reports() {
 
   return (
     <div className="sm:p-6 md:p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto space-y-10">
         {/* 🔹 Cabeçalho */}
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-foreground">
@@ -163,7 +163,7 @@ export default function Reports() {
               <Button
                 onClick={handlePrint}
                 disabled={loading || filteredData.length === 0}
-                className="bg-green-700 hover:bg-green-800 w-full md:w-auto rounded-full"
+                className="bg-green-700 hover:bg-green-900 w-full md:w-auto rounded-md"
               >
                 <Printer className="w-5 h-5" />
                 Imprimir

@@ -98,7 +98,7 @@ export default function Beneficiaries() {
 
   return (
     <div className="sm:p-6 md:p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto space-y-10">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
@@ -110,7 +110,7 @@ export default function Beneficiaries() {
           </div>
 
           <Button
-            className="flex items-center gap-2 px-6 py-5 rounded-full"
+            className="flex items-center bg-blue-700 hover:bg-blue-900 gap-2 px-6 py-5 rounded-md"
             onClick={() => {
               setEditingBeneficiary(null);
               setShowForm(true);

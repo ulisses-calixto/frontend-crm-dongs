@@ -51,11 +51,7 @@ export default function DeleteConfirmationDialog({
           <AlertDialogCancel asChild>
             <Button
               variant="outline"
-              className=" 
-                rounded-full 
-                px-5
-                w-full sm:w-auto
-              "
+              className="rounded-md hover:bg-red-100 hover:text-red-700"
               onClick={onClose}
             >
               Cancelar
@@ -65,9 +61,9 @@ export default function DeleteConfirmationDialog({
           <AlertDialogAction asChild>
             <Button
               className="
-                rounded-full
+                rounded-md
                 px-5 
-                bg-red-700 
+                bg-red-800 
                 hover:bg-red-950 
                 text-white
                 w-full sm:w-auto

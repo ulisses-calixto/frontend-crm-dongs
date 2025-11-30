@@ -47,10 +47,10 @@ export default function Login() {
       <Card className="border border-slate-200 rounded-md bg-white p-4">
         <CardHeader className="space-y-1">
           <CardTitle className="text-center text-2xl font-semibold text-slate-800">
-            Acesse sua Conta
+            Acessar conta
           </CardTitle>
           <p className="text-center text-sm text-slate-600">
-            Entre com suas credenciais para continuar
+            Entre com o email e senha cadastrados
           </p>
         </CardHeader>
 
@@ -87,7 +87,7 @@ export default function Login() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-11 rounded-full text-base font-medium"
+              className="w-full h-11 bg-blue-700 hover:bg-blue-500 rounded-md text-base font-medium"
             >
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
