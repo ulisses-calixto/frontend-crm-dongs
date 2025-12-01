@@ -117,7 +117,7 @@ export default function DonationList({ donations, loading, onEdit, onDelete, onD
 
                 <p className="text-gray-700">{donation.description}</p>
 
-                <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2 pt-4">
                   <Badge className={typeColors[donation.donation_type] || typeColors.other}>
                     {donationTypeLabels[donation.donation_type] || donation.donation_type}
                   </Badge>

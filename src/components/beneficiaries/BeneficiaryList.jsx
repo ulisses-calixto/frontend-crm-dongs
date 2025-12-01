@@ -136,7 +136,7 @@ export default function BeneficiaryList({ beneficiaries, loading, onEdit, onDele
               </div>
             )}
             
-            <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t">
+            <div className="flex flex-wrap gap-2 mt-auto pt-4">
               <Badge className={priorityColors[beneficiary.priority_level] || priorityColors.medium}>
                 {priorityLabels[beneficiary.priority_level] || beneficiary.priority_level} prioridade
               </Badge>

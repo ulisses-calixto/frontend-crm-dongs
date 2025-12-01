@@ -121,7 +121,7 @@ export default function Beneficiaries() {
         </div>
 
         {/* Filtros */}
-        <div className="bg-white rounded-md border p-4 mb-6">
+        <div className="mb-8 border-b pb-8">
           <BeneficiaryFilters
             filters={filters}
             searchTerm={searchTerm}

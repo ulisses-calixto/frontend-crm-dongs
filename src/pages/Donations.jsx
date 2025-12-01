@@ -169,7 +169,7 @@ export default function Donations() {
       <div className="mx-auto space-y-10">
 
         {/*Cabeçalho principal*/}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
             <h1 className="text-3xl font-bold text-foreground">
               Gestão de Doações
@@ -191,7 +191,7 @@ export default function Donations() {
         </div>
 
         {/*Cabeçalho filtro*/}
-        <div className="bg-white rounded-md border p-4 mb-6">
+        <div className="mb-8 border-b pb-8">
           <DonationFilters
             filters={filters}
             searchTerm={searchTerm}

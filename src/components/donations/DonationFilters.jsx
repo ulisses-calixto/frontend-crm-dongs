@@ -57,14 +57,13 @@ export default function DonationFilters({
           placeholder="Buscar doador..."
           value={searchTerm}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="pl-9 rounded-md"
+          className="pl-9 rounded-md bg-white"
         />
       </div>
 
       {/* Filtros */}
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex items-center gap-2 text-slate-700 font-medium">
-          <Filter className="w-5 h-5 text-green-700" />
           <span>Filtrar:</span>
         </div>
 
@@ -73,7 +72,7 @@ export default function DonationFilters({
           value={filters.type}
           onValueChange={(value) => handleFilterChange("type", value)}
         >
-          <SelectTrigger className="w-[150px] rounded-md">
+          <SelectTrigger className="w-[150px] rounded-md bg-white">
             <SelectValue placeholder="Tipo de doação" />
           </SelectTrigger>
           <SelectContent>
@@ -90,7 +89,7 @@ export default function DonationFilters({
           value={filters.status}
           onValueChange={(value) => handleFilterChange("status", value)}
         >
-          <SelectTrigger className="w-[180px] rounded-md">
+          <SelectTrigger className="w-[180px] rounded-md bg-white">
             <SelectValue placeholder="Status da doação" />
           </SelectTrigger>
           <SelectContent>
