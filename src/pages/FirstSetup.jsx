@@ -195,12 +195,11 @@ export default function FirstSetup() {
                 !orgData.cnpj ||
                 !orgData.description
               }
-              className="w-full h-11 sm:h-12 rounded-full text-base sm:text-lg font-semibold"
+              className="w-full h-11 sm:h-12 rounded-md text-base sm:text-lg font-semibold"
             >
               {loading ? (
                 <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Concluir
+                  Aguarde...
                 </div>
               ) : (
                 <div className="flex items-center gap-2">

@@ -91,8 +91,7 @@ export default function Login() {
             >
               {isSubmitting ? (
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  Entrar
+                  Entrando...
                 </div>
               ) : (
                 <div className="flex items-center gap-2">
@@ -108,7 +107,7 @@ export default function Login() {
                 to="/auth/cadastro"
                 className="text-slate-900 font-semibold hover:underline"
               >
-                Cadastre-se
+                Crie uma conta
               </Link>
             </p>
           </form>
