@@ -178,7 +178,7 @@ export default function Layout({ children, currentPageName }) {
                   {user?.name || "Usuário"}
                 </p>
                 <p className="text-sm text-slate-600 truncate">
-                  {user?.role === "admin" ? "Administrador" : "Usuário"}
+                  {user?.role === "admin" ? "Administrador" : "Administrador"}
                 </p>
               </div>
             </div>
