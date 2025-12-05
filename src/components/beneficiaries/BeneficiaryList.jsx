@@ -7,9 +7,9 @@ import { formatDateForDisplay } from "@/utils/dateUtils";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const priorityColors = {
-  low: "bg-blue-100 text-blue-700",
-  medium: "bg-yellow-100 text-yellow-700",
-  high: "bg-red-100 text-red-700"
+  low: "bg-blue-600 text-blue-100",
+  medium: "bg-yellow-600 text-yellow-100",
+  high: "bg-red-600 text-red-100"
 };
 
 const statusColors = {
@@ -144,7 +144,7 @@ export default function BeneficiaryList({ beneficiaries, loading, onEdit, onDele
                 {statusLabels[beneficiary.status] || beneficiary.status}
               </Badge>
               {beneficiary.monthly_income != null && (
-                <Badge variant="outline" className="font-medium">
+                <Badge variant="outline" className="font-bold font-medium rounded-md">
                   R$ {beneficiary.monthly_income.toFixed(2)}/mês
                 </Badge>
               )}

@@ -39,14 +39,14 @@ const statusColors = {
 };
 
 const typeColors = {
-  monetary: "bg-green-100 text-green-700",
-  food: "bg-orange-100 text-orange-700",
-  clothing: "bg-blue-100 text-blue-700",
-  toys: "bg-pink-100 text-pink-700",
-  books: "bg-purple-100 text-purple-700",
-  electronics: "bg-gray-100 text-gray-700",
-  medicine: "bg-red-100 text-red-700",
-  other: "bg-yellow-100 text-yellow-700"
+  monetary: "bg-green-600 text-green-100",
+  food: "bg-orange-600 text-orange-100",
+  clothing: "bg-blue-600 text-blue-100",
+  toys: "bg-pink-600 text-pink-100",
+  books: "bg-purple-600 text-purple-100",
+  electronics: "bg-gray-600 text-gray-100",
+  medicine: "bg-red-600 text-red-100",
+  other: "bg-yellow-600 text-yellow-100"
 };
 
 const formatSafeDate = (dateString) => {

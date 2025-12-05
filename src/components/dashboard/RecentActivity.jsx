@@ -5,14 +5,14 @@ import { format, isValid } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
 const donationTypeColors = {
-  monetary: "bg-green-100 text-green-700",
-  food: "bg-orange-100 text-orange-700",
-  clothing: "bg-blue-100 text-blue-700",
-  toys: "bg-pink-100 text-pink-700",
-  books: "bg-purple-100 text-purple-700",
-  electronics: "bg-slate-100 text-slate-700",
-  medicine: "bg-red-100 text-red-700",
-  other: "bg-yellow-100 text-yellow-700",
+  monetary: "bg-green-600 text-green-100",
+  food: "bg-orange-600 text-orange-100",
+  clothing: "bg-blue-600 text-blue-100",
+  toys: "bg-pink-600 text-pink-100",
+  books: "bg-purple-600 text-purple-100",
+  electronics: "bg-gray-600 text-slate-100",
+  medicine: "bg-red-600 text-red-100",
+  other: "bg-yellow-600 text-yellow-100",
 };
 
 const donationTypeNames = {
@@ -26,12 +26,21 @@ const donationTypeNames = {
   other: "Outros",
 };
 
+/* 🔥 Correção do bug de datas voltando 1 dia */
 const formatSafeDate = (dateString, formatStr = "dd/MM") => {
   if (!dateString) return "Data não informada";
+  
   const date = new Date(dateString);
-  return isValid(date)
-    ? format(date, formatStr, { locale: ptBR })
-    : "Data inválida";
+  if (!isValid(date)) return "Data inválida";
+
+  // Corrige conversão UTC ➝ Local sem perder o dia
+  const localDate = new Date(
+    date.getUTCFullYear(),
+    date.getUTCMonth(),
+    date.getUTCDate()
+  );
+
+  return format(localDate, formatStr, { locale: ptBR });
 };
 
 export default function RecentActivity({ donations, beneficiaries }) {
@@ -44,8 +53,8 @@ export default function RecentActivity({ donations, beneficiaries }) {
       </CardHeader>
 
       <CardContent className="px-6">
-
         <div className="space-y-8">
+
           {/* Últimas Doações */}
           <div>
             <h3 className="font-semibold text-gray-900 mb-4 text-lg">
@@ -116,10 +125,10 @@ export default function RecentActivity({ donations, beneficiaries }) {
                       <Badge
                         className={`px-3 rounded-md ${
                           beneficiary.priority_level === "high"
-                            ? "bg-red-100 text-red-700"
+                            ? "bg-red-600 text-red-100"
                             : beneficiary.priority_level === "medium"
-                            ? "bg-yellow-100 text-yellow-700"
-                            : "bg-blue-100 text-blue-700"
+                            ? "bg-yellow-600 text-yellow-100"
+                            : "bg-blue-600 text-blue-100"
                         }`}
                       >
                         {beneficiary.priority_level === "high"
@@ -143,8 +152,8 @@ export default function RecentActivity({ donations, beneficiaries }) {
               )}
             </div>
           </div>
-        </div>
 
+        </div>
       </CardContent>
     </Card>
   );

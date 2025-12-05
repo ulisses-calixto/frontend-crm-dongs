@@ -53,7 +53,7 @@ export default function MonthlyChart({ data }) {
                   backgroundColor: "white",
                   border: "1px solid #858585",
                   borderRadius: "4px",
-                  boxShadow: "0 10px 20px rgba(0, 0, 0, 0.377)",
+                  boxShadow:"0 4px 18px rgba(0,0,0,0.12)",
                 }}
                 formatter={(value) => [`${value} doações`, "Quantidade"]}
               />

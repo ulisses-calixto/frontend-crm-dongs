@@ -2,15 +2,6 @@ import React, { useMemo } from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const COLORS = [
-  "#0094d8",
-  "#8250f7",
-  "#00b176",
-  "#f97316",
-  "#ec4899",
-  "#64748b",
-];
-
 const donationTypeNames = {
   monetary: "Monetária",
   food: "Alimentos",
@@ -19,19 +10,32 @@ const donationTypeNames = {
   books: "Livros",
   electronics: "Eletrônicos",
   medicine: "Medicamentos",
-  other: "Outros",
+  other: "Outros"
 };
+
+const typeColors = {
+  monetary: "#16a34a",
+  food: "#ea580c",
+  clothing: "#2563eb",
+  toys: "#db2777",
+  books: "#7c3aed",
+  electronics: "#4b5563",
+  medicine: "#dc2626",
+  other: "#ca8a04",
+};
+
 
 export default function DonationTypePieChart({ donations }) {
   const data = useMemo(() => {
     const typeCounts = donations.reduce((acc, donation) => {
-      const typeName = donationTypeNames[donation.donation_type] || "Outros";
-      acc[typeName] = (acc[typeName] || 0) + 1;
+      const typeKey = donation.donation_type || "other";
+      acc[typeKey] = (acc[typeKey] || 0) + 1;
       return acc;
     }, {});
 
-    return Object.entries(typeCounts).map(([name, value]) => ({
-      name,
+    return Object.entries(typeCounts).map(([key, value]) => ({
+      key,
+      name: donationTypeNames[key] || "Outros",
       value,
     }));
   }, [donations]);
@@ -63,7 +67,7 @@ export default function DonationTypePieChart({ donations }) {
                   {data.map((entry, index) => (
                     <Cell
                       key={index}
-                      fill={COLORS[index % COLORS.length]}
+                      fill={typeColors[entry.key]}
                       className="transition-all duration-300 hover:opacity-80"
                     />
                   ))}
@@ -78,9 +82,8 @@ export default function DonationTypePieChart({ donations }) {
                   ]}
                   contentStyle={{
                     backgroundColor: "white",
-                    border: "none",
-                    borderRadius: "12px",
-                    padding: "8px 12px",
+                    border: "1px solid #858585",
+                    borderRadius: "4px",
                     boxShadow: "0 4px 18px rgba(0,0,0,0.12)",
                   }}
                 />
@@ -91,12 +94,12 @@ export default function DonationTypePieChart({ donations }) {
 
         {/* Legenda */}
         {data.length > 0 && (
-          <div className="pt-3 grid grid-cols-2 gap-2 text-sm">
+          <div className="pt-0 grid grid-cols-2 gap-2 text-sm">
             {data.map((entry, index) => (
               <div key={index} className="flex items-center gap-2">
                 <span
-                  className="w-3 h-3 rounded-full"
-                  style={{ backgroundColor: COLORS[index % COLORS.length] }}
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: typeColors[entry.key] }}
                 ></span>
                 <span className="text-muted-foreground">{entry.name}</span>
               </div>
